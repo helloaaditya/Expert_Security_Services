@@ -22,8 +22,8 @@
     <style>
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9), rgba(27, 58, 95, 0.8)), 
-                        url('collin-8FxJi5wuwKc-unsplash.jpg') center/cover;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9), transparent), 
+                        url('https://theexpertsecurity.com/wp-content/uploads/2024/07/UHbOnLPGQSOf.jpeg') center/cover;
             display: flex;
             align-items: center;
             position: relative;
@@ -76,6 +76,12 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             animation: slideInLeft 1s ease 0.3s both;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(144, 144, 144, 0.5);
+        }
+
+        .hero h2 span {
+            font-family: 'comic sans ms';
         }
 
         @keyframes slideInLeft {
@@ -92,6 +98,7 @@
         .hero-highlight {
             color: var(--accent-gold);
             animation: glow 2s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(106, 103, 103, 0.5);
         }
 
         .hero p {
@@ -100,6 +107,10 @@
             margin-bottom: 2rem;
             opacity: 0.95;
             animation: slideInLeft 1s ease 0.5s both;
+            color: var(--white);
+            font-weight: 600;   
+            padding: 1rem;
+            border-radius: 10px;
         }
 
         .hero-buttons {
@@ -312,97 +323,159 @@
 
         /* Services Section */
         .services-section {
-            padding: 6rem 2rem;
-            background: var(--white);
+            padding: 4rem 2rem;
+            background: rgb(238, 232, 222);
         }
 
-        .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-}
+         .services-grid {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 30px;
+ }
 
         .service-card {
             position: relative;
-            padding: 30px 24px;
+            padding: 40px 30px;
             color: #fff;
-            border-radius: 16px;
-            min-height: 260px;
+            border-radius: 20px;
+            min-height: 320px;
             background-size: cover;
             background-position: center;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        /* Dark overlay for readability */
+        /* Gradient overlay for better readability */
         .service-card::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.55);
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.85) 0%, transparent);
             z-index: 0;
+            transition: all 0.4s ease;
+        }
+
+        /* Hover overlay effect */
+        .service-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, transparent);
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
         }
 
         /* Content above overlay */
-        .service-card * {
+        .service-card > * {
             position: relative;
             z-index: 1;
         }
 
         /* Individual background images - Security related */
         .service-card:nth-child(1) {
-            background-image: url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80");
+            background-image: url("https://theexpertsecurity.com/wp-content/uploads/2024/07/higcom-image-marquee-security-guard-mm-885.jpg");
         }
         .service-card:nth-child(2) {
-            background-image: url("https://images.unsplash.com/photo-1597481732491-2d17e8032e21?w=800&q=80");
+            background-image: url("https://poonasecurity.com/wp-content/uploads/2022/01/02-24x7-Vigilance-copy-min-2048x1365.jpg");
         }
         .service-card:nth-child(3) {
-            background-image: url("https://images.unsplash.com/photo-1581578021424-ebdc0b1b0e4d?w=800&q=80");
+            background-image: url("https://poonasecurity.com/wp-content/uploads/2021/04/VIP-Protection-scaled_11zon-1-2-1.jpg");
         }
         .service-card:nth-child(4) {
-            background-image: url("https://images.unsplash.com/photo-1626992909889-6c7ce03b6d70?w=800&q=80");
+            background-image: url("https://poonasecurity.com/wp-content/uploads/2021/04/04-QRT-Service-2-1-1-2-1-min.jpg");
         }
         .service-card:nth-child(5) {
-            background-image: url("https://images.unsplash.com/photo-1626814029240-89bde2a1fad7?w=800&q=80");
+            background-image: url("https://theexpertsecurity.com/wp-content/uploads/2024/07/law-enforcement-security-guard-training-resized.jpg");
         }
         .service-card:nth-child(6) {
-            background-image: url("https://images.unsplash.com/photo-1594834841132-0af3a1a0e5c6?w=800&q=80");
+            background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMWFRUXGBcXFRcXFxcXFxYYFRgWGBUVFRcYHSggGB0lHRcVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lHyUtLS0tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALEBHAMBEQACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAgMEBgcBAAj/xABGEAACAQIEBAQDBQUHAgMJAAABAgMAEQQSITEFBkFREyJhcTKBkQcUobHBI0JSctEVM2KCkrLwY+EW4vEkNENEc5OjwtL/xAAbAQABBQEBAAAAAAAAAAAAAAADAAECBAUGB//EADYRAAICAQQABQIEBQQBBQAAAAABAgMRBBIhMQUTIkFRMnEUYYGxBjNCkaEVI8HhJDRDUtHw/9oADAMBAAIRAxEAPwDGbVr4Edp0hHrUsCOgUtoxcfsz5emnxcUypeKGRXkY7DL5gB3N7VKcVGGWw9NTfq9j6IFZxbEyU6Y8SJNU0TyVP7R4BJw2ZTvGVlX0KHzfVSaepYtT/QBfHKbMLArRwUDtqWBxa1HaMOIabaPkeD02wlk9nqagLI4HqaghsnaIojE/hHAZ8SW8Jbhd2JsoPRb9/SlOyMF6iVdMrPpGOIcNmw75JVKtuOxHcEb0SEozWYkbK5VvEhsNffeiKOAeTqqRT4yNkkwi9QawOmS0w9QY4rwaiIcTD0yE+iNiYPMdKIiA5BhqZkia+F1obY6FYbA53VdrnWhzlhZDVQ3SSLphsMiLYCwG1Vd2TZSSWEVXmtlJFt/0qzFekoaxrKKvKtLaUBh0psCGZEqDQhh1oTHGSKG0MD7UfBI9anwMdtUlETFKKmojGm/ZRzvBg45MPiLqrtnSQC4BIAKsBqNtDTajTytUXH2LFU1hRZpfCePiVM2jL+666gj9KpXU7JYRoyri8OD4CrSA60AGvgjTS1NDlX59xYTh+IJ/fURD+aQgflc/KiVLNiQG9rY0YdatLaZwoCltHOgVHAmKWnwIWDT7RZFipYHydvUlEbIpTU0hsmzckYVVwUIH7yh273fzG/1A+VZWok3YzXpW2tA7nvhath3fS6DOD7bj5i9F0lmJpfItTFTqbfsZiEvWxgxSTFtY0zQw9FHUJDhOCgSQRMnRYQGhOWBEuPAbVDeNJDON4b5zRIz4IIdw3DjppUZWEsE6fh2tB8wkiGsRRsw6Un6kEhLa8ocxOMkI7e3/AHqMYJMs/iZYAGLQk61ZT4K05buQdLHSwDI7rUREeRahIRHkFCaHGbVDAgXVhIR21OkI7UxjtOkMLWjREWLlfmqbBmy+ZDuvv2/pTWVRs7C13uHHsbJwjjQngSZB5WGw6EaFfkbisuynbLBoQkpLKH4piW83lXqaFPMVx2EawjLftA5s++MsEa5MPCzFRoTI+q+I1ttLgDsT30t6TSuvM5ct/sZds9zKiI6v4AihHSwOeKUsCOFabAsnRUsCFA0+BEnhuAknkWKNcztsP1J6CmlJQWWPGLk8I0OH7KXyXfEDPbZU8o9Lk6/hWe/ElnCiWVpl7sf4HxhcAPuuLupXRJACQy9Abagjb2tTW1Su9dXIZW7FtkD+aub45VMUJJDXDMRYWOhUA63Pf1o2l0k1LdMDfqFKO1FQEXatTJRwPRx3pDErDxm9QkOg3hMOGGm9VZSwEJ+HwxHSgSY+cB7BYQGwIqrOeB+wk3BgzXtQvPwhlElw8DA6UN3sltE4rhNNG0WANi+E+lWI2j4A2LwtqPGWRAPGQ0dMiDJY6mMRJY6YciSpQ5IYjSJQ2OMFaGIDg0dMQqpIY7U8DChU0hC1oiGHAtESyI2r7MOTpBhVnbEOomGdYlylADsxzA+Yi21um9Zus1UVPZtzj3LlL2L7gj7SJ8Zhv2YceE+hKizex99aNpqKrFvXYbU7lBTj0zNlFXHHBmkiGO5FQawOX7lL7PZMUviE5I/4iN/5R1rM1Gu2PEQu1Lss2K+xyMqcmJYN0JjBH0DX/Gqy8SnnlDNIzPmvlXEYGTJMos18jrqjgdj0PodfzrU0+phevT37oi445AFqtpEBeQ2vY2720p+BYeMl5+yXKMQ5Ns2UW/G9UvEM+XwWtKs5Nk8QWrBwWGuTOvtKhiaJmZrMPg0ucw1A9AdvnWroHJSwgV6Wzky1TW9gzyZh3qLiNkKRRg0JvA4TwuAewYqbd6rzvjnAVVSxkMYbCbWoE5EMh7AYcHRh86pWSx0ETDmDwOtVpTyPgP4XC1WkxyYIh2qGRZG5sMDSyOmBcfhRajQlyOVTikPpV6tjMrONiq5FkQRNFRMiERYBnNgL1GU0lyOo5InEcAYzZhahb0+h9uCNAVAIIoc8k44wDpRqaGQaK4KOgYsUWIhQoqGFAUSKGHFoqQw6gqaQjRuSvtIfCQjDyxmRF/u2U2ZQdcpB3A6fSqt/h8bpb08MtVWQ6mC+dubfvpAClVBvra+m21WqNMqYYQbUaiEq1XDoqyiptGfkIcPUF1G1yB9SBQLU1FsnE+pcJhlijWNBZUAUD0GlcjKTbyTH6YRXOfeEJicHLG42UyIeqsgzAj8R7E09FzqvjJEopPhmLcR4fh/u2bQELcEWve3Tvc11SlLJZsrr8sE4fiaCHw2S5At6H3NScJOQKN0FXta5IHD8dJA4kjNmH4+hok61NYZVjNxeUb5hsakkKyRtnDKCCDvfp73uLelctOMoz2vg0FLKyV/jPKH3o55SwsLKFOg9fU1dp1jpWIgZx39mdcycuPhHAJzI3wt675WHf89a3NJqo3r8yrZW4A+GrTQFhbB0GaEmXrh2KV4wltbWP/rWFdXNTZoxujtJaJ5tALE2+p7VHzMcMA688hjBw0KciKDeCSq0iQaiGlAl2IVTCPUhA7GpUovkkVjiuFq5XMbBUOIQ2NaEJEcAadaMJEnhfERC4e1yO9V7q96wEjwQOZuKeO5cgAne1Rrq2LA8mVt2qTRDJFao7RivCpIgLFGiMLUUVDDgFGQ2RxRRkhhYoiQh1TUkLI6tS5HyKCU2BYLhw3kmV8MMTnC5hmUAX06EnpVaWor3+WzRo0amk3Ll9Gycl8zJjIQrEDERjLPH1DLoWA6qSN/lXL6vTSonh9PplaUcNoslViIF5snthpUBs8iMi9xmGUt8gb09VW+1P2QSqG54PnHi2BeB/CY7C49RqL26bH6V19M1YtyBXRcJbWQLUbAEs3IPLq4ydg9/DjAZgNMxYkKt+2hv7VT1t7phx2w1MFJ8mnf2Lh8MySRr4YVszBCQp0KksoNmsDfXtWI7ZWZUuS9sWA1xDHqsRkUhha6kG4N/h1GltqrxXOCMEmZRz/x1ZmEMZBVTmYjYsAQAO9gx+tdF4bpnBb5e/RU1E03hFXgrVaKrCuE01O3WgWNJDBnhPMeEU2bERj/MLfXasi+6t9SQSMWXbh/hyASRsrqdQysGU+oI0qjLnkNveMBiBKFISQSwzUJjhGOahuIh3xhUcCwNSTUsDohzS06iSBOM1o0eBFb4nFv/AM/5vV2tiKxjEtuKtxeSIHnapMcHTGosRDkFDZEjNSEV8U8UQYoGipjDqirEUM2OKKMkRyLUURIbI6oqQsiwKnEQsVMWR5Kckg7gOYMRHF4Kv5NbA62v0Hp6UKVMHLdjkvU6yyuOEQYMTIj+IjsrgkhlJVgTuQRtTWQjNbZLKKrk28l55b5k41ij4WHlL2+J2SKyD/FIV/DU+hrI1Wm0VC3TWPy5JIt+G5Px1i0uNV5DrqjMB6Z8w0/y1lT11C+mGEFha49GT848NxMOJZcSBmPwsvwMo2KE629DrW9oLqras1gbXJyzIB5KugsB7ljiWIwT+NEt1ZbOrDRlGvTUW1N/eqWqqrvWxsNCM4+rHAX5j5+mxMfhrEsQIIYhi5IIsQLqMvvvQNN4ZGue6Uskp3PGEVFZ3y5A7Bf4cxy/6b2rWVcM7sLJXcmIC0ZEBxpkjGZzYXtoLn5DrQNVqI0Vuch4w3PCK9xbizSmwusY2W+/q3c/hXK6jWWXv1cL4LMa1EG3qskSbCXAePT4OQSQOVP7y7q46q69R+I6Wo8JbQT5PorlLmKLGwCaIEa5XQ2ujDcG2+hBB7H5UScGmJSDqTUPaPklJPUXEQ4Jqg4slkRLPTKIiDPNRowFkgS4nvRfKYkyNiMFIyZwpK96j5sIyw2TWCr8SjFXIMZorWJTU0dMYHzxHemYiFNUWRyRGFQEV7MKW+KWSGBoynpVeWpeeCW0WuJPpRYa6a7G2Dn3z0/GjLxF/BHYdXGG+wtUo6955QtgQSVbXuK0ldW1nIPDOjEp3pvxNeex9rJKirSlnoYcUVISZKwWGeV1jjGZ3NlHcn/m/pUZSUU5PpBIpyeEarwHkiGABpVE0m5LC6A9lQ6H3N/lWJfrJ2cR4RqVaaEVzyy1wYsoLKAB2HlH0FZ06VLsI6IscTjbISW8ybn+Ie3f2qvbolJensHPSpr09lN+2iSNosMVILFiykdY8mp9rlKteAxnGc0+l+5RsTxyZbFHc10rBJG/cg8GhXBQsUVmdMzMQCfNsovsALCuT1tkpXS/JhXJ9FH+1LldYZUlw8JCyKxkVFJRChHmsBZc2b28p9a0vDNXlOE5ddZINZKDFhixsBcnYVuwkgEuORUmFK2JBF9qMmiKeQRzEG8G4HlzqGPQFg5UfPK3+k1i+NWpVxh8vIarvJWK5xFjJ0UWCyyMng6wozhgFk0L7HePxYeaWKV8omCBL/CXBNgT0JB39qNBrGGDmpf0m4QwM4DAaHvQbboReGwkISa5Fo5ViDSUk1lDuLF/edad4wNGLXuRZsTTRRLJCfGWPcf8satQiBt3tensi4zEqdtDR1HC5I0eb/Xj9B5uYrRBDe6iwHTTQVjW6GUrG10XotIrWJcNrWjFYWBdgl8Pdr0lZhiwQMdhbC1F35GwBsTFak5ZINEIqagQwVCs3cEPU+RHr0sjHqWRHQammIunK/KSTQiaQt5r5QDawBtc1s6bTQdalL3LVGmjZHdIg8xcueAvixsSmlwdxfQEdxc0HVafy1uj0Qv0/l8roDQYphQ69TOPuVtqJiYhj1qzHWTfuNtRdPs6xUcM6TYl0jjZJhE7uoBdSisN7g2c7230p7tTvr2e4bTqMZ8mxQYxHBykEDTQ3/GqG1p8mpta7G3qRLJFxFSQ6ZnvP0WU4cgtbIyAE3AyMCLDppIB/lrR0LxuX55MvWZ8zIrlLkebFx+MXEUZJCkjMz2NiQtxYXuLk9KFrPEY0y2JZYKEM8l9hxeI4Vhwjj7zCt8rL5HjzH4WU3utzob6Xt2rBt/8qbcHtb/yE8tFzw+ISSMMjBgygqdwQetZ8cRe2T9RBppg1uT8CQR93S5JJNrNc6mx3HsNKvLU3r+tkcmJc8RLhsRMn7kJAJFrkMVK6aXbzgW9O1bmm12zT+ZJ5yRnFN5M/wCK495bjUIpvl6dQGaxsW1I9L298zV3Tvm5SRJR28AyqyJClIo9TWeQcxzSrTw+gQlAAwzAlbjNbe3W3S+9VrE1z7Ekzd/sC43JLBiMO7MyQNGYsxuVSQOPDHoPD09zVDVR2tP5D1vPBofGnHltuN/Y9/nUdG5Zl8CnwBBNY6960OweQTw7j+HxURkhkJAcowK5dQAbrr5lIO9SrbbIb+cEfE4g1ciJkVsRfrRMiGpJhsTTBE2Rs4za/QHWm27uAtcdzwIKMv7S4PodqMqIy4Lr06wQOM4xDl1ABFyOoa5BBPba1Qqr2ycX2VUkuwIGQtvYGmvahx7g5YZGmaO+5+lU/MIYRD4FwyARCSbLdtRmIsB0sDWjotJUqlZNd/JOCT7IHHMDABnhdfVQd/Var6zTVfVU/wBCU4JLKL3wjljCwwqXUO5ALMddT0A7VcrohWsJFzS1Qa55ZW+c+CRJGJ41yEMFZdrhr626G9vrVHXVxS3JEdbRGDTiCOC8uS4gZxZU7ndtbHKPTvQ9Po5Wrd0gFVMrHwXnh3DZ8PDkjPihblRax7kA7GteuUaYbXzguKmdUeHko3GuPPN5LZUHTrp3rM1Ws8z0xWEUbLZT7I/DOGTTnLGhOmpOigepNCrqnLpEYVym8RQVblbGRul4s+ZgFA8ysd8remnXpeieVKL5JvTTLrhvs4aWWOfyRMD4jxoDJEzhmcKoNgkZ8qZbmwG5prXWu37oUNO44bZY+WZBHLIpGXNrbYA3OcAdNR+FHtiscG9qFFxTj0WQzigYKOCHisQBU0hZF8U5POLwSgACYuHiLaWQ5VYE2vYr5rdwtAjrvJvz7dGbqJKUyZy9j1gdeHuAHiRUDbB8iglgPUXaqV73t2/LLP4dqhWrlFmxMSFMps2fQ9QQd/laq+eeOyqm5SMo4mVw2OTBRSTQjL4qv+0K5y91DJfK8eoGZdspzXFyLikpvM4phFCUsl2x/O6w4UzumZgchEbq0ec6fHe4W/pf0qpDT22W+WmsEJUuPZgvNeJlxHizMxLM3iva9jrtvYAXFvYVr6imNdSjF9EFJYxgqMmJZr5tSba9rdqoTtlPtiGzUBCSKci0dQ2o1fDyQaJZxCmNly2YlSCNvLcEEf5jt6VZttU62kuXj/AJQaknng1P7Mp3wsUssL52m8EXUXIyK5ZGBG4zrr6iha6qvEcvITTOU1LMcYeP+y+8u8QebEEygmykm9xfYAEdtdqouajHbAsup+5F+2hA/DXdX8No2UrZsmZWOV4hY63Bvl6lB2qNUWpEJR4Mw5a4iqYZERtFLZuliSWIOvYjWtihJQAS7CsXGw48rXHcG409aJlewkjpxV+v41FyQRIXhYGluAQLd7m/oAKBZcohIxbGMVC0LC51GtvT27VKq9PknFuEsjWI4m4Gq2HfYVdjqYIsPUtiIMIz5iw0Ctv1JFh+d/lRKIuVqm+gmk0ruk2+sEDF4X4SNAVBt100P6VX8Tjtt3/IHVadVtNdMHvCex/Gs3KKmAUQLAb20F9bfKtd1pJR+AyGZVB2Fj+FVpwXsLcGOH8eeFfCYg5TYWYNYGx3UkH5VYhrYwjts7Qq5NPMWN8zcQ8Q+GsgdB5gwuMxt2OotrVLU6pW4iuEHtTfDZoXKP3eSPPmVYYgtySFA6BSToPWtKdsY1rYyVEsIsMXOXDFkEIxMd7gaBimv/UAyfjWXOxP3Ju2L9yDzxyXh8Qy4hAEcWL5QLSC4Hm9Rddeov6Whp2nclIiqozlyQsDgPDsEUX200v9a2JXR6ZanZXTHL4Q5BzZAmKTDSaNcBh6m2VfUkkaVQusipYyV46iu1ellv4tzPhsGoMkyoXJVb66juACQBcXNrC9VLIxb9QN7W8SM+4jjJAxlL+YHMxvuQdbW6VrLChwuMGxJf7a29Gixcs4gqpEyMCAdVYbi/Qm9ZT1sU+UZL1cc8ooX2j4t8KY4YMQjzEnxQoF4j5TGDckC+u/b1p69S7W4pYBu6U+IooXGf7REhxUzymS5PieJ5lJ3y5W8g9gBaoWaWUVnAnprIRy48GlcP5pgkHDsTM2fEqojxTAEm18qtJlFh5SzXPehbH5clj2J0NxqnXL36+5YOYefMJBE6wyF5GVwrxrnCnVc9zo1j02NqzdPvXMkQVLayzLeIt98maV55JiUT4wFIYAAqAPKoJFxa2+1atC3++DS0emrllslclTyQY/wScySoyup8wOVWdCfUEH5Me9ThBxu2sa7T4sx7BD7ROGxRwNPDEVa4zZNFHZ2QaHtf11vtVi+GI7ipq6VGO5IyIms7Jmnr0hZFRxs2yk+wJpZQwpsNIN0Ye6n+lTU0RHcCiCWPxgwizp4lgb5Mwz5fW16eU3te3sY3TGccwOEjjTC5VisCpTbXXMSddbk+5rn6nqtRZLfnj2NOtKCyzI+YuY8RLiJHEzgXsuR2UZRtoCPxrYrq2xSfZWtm5SbHI+b8W+Hkwc0zSROumfzMpQh1AY62JULr36UaPpeQTbwD+F47wywIzKwItcix/dbT8quyclHMUNFJvkm4PipQ+YAgm/Yg2t8+lVa7mnhlidKxwwvLLKiGUgBe+wIvuAdfYG16uSi9u4ZaW1R3tcBXD87YRYSFbEJICLArHlIPxG6gm/obe/Ss1qcpe2Boyj7gnE8yxu3iZmf927eVlGvQdL9jU0pY4IuaBz8cEpXxWvY69tbX/56VYrayssiuXyXjAyK8auvwsLj22roKnFrMejqtDBKvcvcAcYSUnwlS7ZgY7fvA3Fl9TfbuKfW0eZp8p9GV4lKTbg11yvsV1+IupynNcXB82xBsRvXOeWY6ZFVGI0FW7NbCJehpLZ+wg4Zu4qo9bEm/D7F7jvFWVlj8OBIsihWKs7NI3WR8xOpPQWA2pp31Tiks5Kr0d1eZPlAphQWsAmWXlXHKFaGQF4285TJcBkICsLb6E3uO1XNDJbnGXRo+HuG/Fiyu8YHeYuGGSQugCjJmN/LtoBbe5o2r0++W6KLWu0znZugsLH2LXw/jEyYaGFpwjxISVylg4VTkR2JFrDt2GtRq084eplbZZGPHaKtxPnaaWEpcI/l1TMNvivfbppQXqm1+ZSuvdsdsgJJxSeWZJma8kfh2cgaeGRkLaebpvvVeVjclJ9lXT6eNS2VrCzklcYw2Z2laYu8l2YZTmztqF329fTaoyy5PKNC3TuHOc5LlgMQ33aNpCM2ULlsB8Og/AVtU58tZ+DWqlilOXwWHhH2oYiCKODwo5MgsC7MrFV0VPKD5rD4j+e+JqdPLzG0+DNlpY2SbTKxzDjsPPiZMXAHjM6hpEdlNpNmK2Gxt3+mwteHwmk3P8AQjVXsO4fFDERtma7AZQuly/Qgdbgj6H3rS74LXnqS2tjYhPhtCpsCGzSb3JFmOupFrgegGtVbtTCCdcVllqGlc4YXH5lb5gDx5VDEgIASdCSSdrfKspRaRU1tc68LPsAg5GoJHzp0ZmWumT+G45/FQ+IysCMrjUg9PfWpqUsr5LNFrnNQlLGfc2LhGFxWKwxWdFUOrKWN1zKwIuqanY3B0vpRbvFKa4bZcy90i9bbFQcJvMuuAbw37JMMhBmmkltuoAjU+hsS1vYisOfiEv6UZCr+S74HhOFgGWKCKMf4UAPzO5+ZqlK6yXbDqMV7DzkUPLExhzSyytJMjTXokZte5TtUwFxLgsEvxIN81xpra1yNj8wau6fV2VSyh6tROGM8r4KVzLyoq/tF1Qb2spW/wDFYHT1A61s6XUV6qe18S/cvPUV2/04ZXuH8Cd5VRQrb6FwL21IBYDW35Vb1FPkRdkul+oJtR5fQ9jeTsfEjSSYchFGZmDxsAo1J8rG4AoNfiVEuFIArYN4TAcOIZGzKbHofepWSw8oPCUk8oU+LlcWLuw00LMR6aUJzlLjLJSsk1y2S8Hw5nJsU8ozG7AaDUjterVencn2icK3PoiSKvmsdb6W+Gx/KoTrSbwwT7H4sICoIN979xQnX0WqqVJZLfg+YciqoRbKAB5raAWrradNUoJKfsW4+LzrSiq+EN8Y4r48bR+GLtoNb69PxtRbdEpVSSeeCtqPFPPWxwxn8yothnuRYLYkFSwFiDqLE9K5Ty5vrgrKthAuO4rHeTp98V7kd59bC1JL5Ks78y2xJGGi/iqLnh8Fmily+sZ4nh0Kl10I+Id6JXZJvDKXiOmq2+ZX2uxnguKEbhizD/CNAw6gntpWjppxhLc2Zmlt8uxSySuL8aZpLpYACw677m5qxbqpSl6SxqtfOc8rhEPGcXlkUKx9yNCfeh3auc47SnPUTmsNkXCQ53Ve5F/brVWEd0lEhXDfNRDnHYkNkjK2X62O4ZutiOverOqhXHG32NLVVRbUa8cCeGgxBpJlEiKqkIJVQnMygA387KRmByai4OgFVsySyVrJW0LD90WjD8QhngMiQ+GFJVUzZ8i5RubC/mudv3hWrp5uVeS/TPzKtwHwGAkkLyFigFvN1F9L+16h+HlPLbwD09c55ecDvE8BIAZBdmWwksNLOQgkNtrkj608oOtL5JamrZFPPIewnBwBnU5FU6sDlLZyBkJ67DT1HtVK26am0mXJaSp7U/uJRQzsin/ExO3YAemm3vUtKlKXPsXnBKLjEDc08HZ3g3DSukeuti5AB/H51DVwUVuMrxOPCn+hek+zLh0MbNIJZcoLEtIV0UXNhHlttWHDV2WWKEV28GT5ZXOHrChVYolUsQtwBfzEDffrXafhY1wckukW1CMVwjXCoGg2Gg/SvOpvdJt+5W7EmmwSSIsoNP7CY2aXsQYhhTNDMbalgFIiyLepp4KcocjLwAgggEEWI7g7iiQscZKS7RDDTMy4tgWw8zJqLENG3XLupv3Fre4r0DSaiGroUn78Mux9UTS+WONjExAm2dAFkXpf+K3Zv6jpXD+KaGWju4+l8oy7qnXMzTmvkpo8Z4cRVY5gzxZr5Qw1aK4BtbcX6WrS8Pseqjtz6kaOkzd6V2R//D74eImZQRe7FTcexPpW9Rp/Lre80lp/KrzYV3iWIDyMV2Ntuug3qlqLFKb29FObTbwSzwsumZLBwNU/i01K+vpVuWj3wU4d/Ab8O5RzHv4PcIynOrmxtoNdxfSw3PS3rVOKy2n2E0jXKkPf2gyZdjqSPnuKNXbt4Yd3eWkuCekKSZXAsbAj89e9akGniSCKiu3E8cheTlZJT4jnIzeZgBfU9d9L72qUtJXN7muydmjjKWSowYJ2OunrXHOxewSnRW2PD4JjYNU2Ovc1BybNB6OulcPn5E/e1UWFyaUa3KSIPWV1RaXLF4yIZFAABIbXv7/WtbVUwqjDC5MqEnbGQASNjsDVVySMyFU5P0onYfhEjWOgHrU1ZFLg0KfCNRas9IIx8vL+85PtpUHM1q/4drX1yY/Hg1iORDZmtqdfh1H1q/pITlGUogNVoqdK1CD9TPYKXDGXK8l2lKIxZbRIGFiGb4gQdCQLddbVDzYqTcuTJjfCMpOSyDOLRtH+ye2eNiuhuLXI07i4/Gp6mdbrjFLlfsQs3JJT/wDyCvLnE2ZUw6hVCEtm6tmbUfjVnRWqS2JdFrSXN4rSwXHFkKVsPL8PyJH6gVfwjb2qPBU+b5SFyrmABAYBiFI1yq6/vZWAIN9L/Os7xCLwpIxvE/qj+RK5W47KMO8BIZL3Dm+a5AJXXsetVaNDO/M0+haC5tYl7dDmCuHJI3I2P4/jWjpdJKmMt5oucpzWCZHiB95wuY3JxWH09TIv0rO8QadTQLX7Y0KP5o1HmeQLhJz/ANNh/q8v61z3hUN2rr+5lR7RmWAH7WM/9RP9wr0K/wDlS+z/AGLDXBr0leYNFUaao4HGXNJIQ0adkWIY1HJBjDUyAyQ01PkDISDUgDZU+fsKCsUnUEofZhcfkfrXUfw3dmU6n9/+A1MvYBcsYkxYlLGwc5G9Q230NjWx4tpI36aWe1yv0FqYqUGXvjuD8eEoLCRSHib+GRfhPsdj6E1wuktlRapIo6ezypqSZWTiRNACdFlTzL2JFmHyNx8q9IqSury12jprNR5kPuZyuCAa2a/S3qDqKq06CELOXlMy1lvBKCW0VvOCCLH8vr+FFUYRnJRfRZb2xWHyg3Jg1Li90xCgZ/I8dntrE+dR5gLE26Ea1CKq1MnjiS+PctUWQueepfuO4Hl0G7uq3uept1ve9Sr0cYvMkGWnTfqF4XCwYdxnD3HwZvMrH0t1Gm9XK9FGK3R5HrnVTPY8/kTcRzGAbBCfUkCpSTXQSzWJPhFVQOOwrgtppQ82KwxacGkkBZbG29zWjpfDrL47oYwU9RTPOex1eW5QQSRobkDt6GtOvwhxmpN9FGVFjXKJcs0YUoRfTtsf0NPr7dOk65d/sG0tEo+pdDeDwQGtt9a5qEG3mXR0+m0kYLOOycQuw0PT+lXmqpLEeGWZPahkvVbsZzWMgdcUzMzW1vcD0G1vWtnRebGLUF2chqNS7bJSa59vsBo4yTcqfX3PeqkKJSlyvf8AyY65eWjuJLEgHUgAD9BULoShPY+Qk3KRY+D8G8PLI3xXHsOtvU1oafSyr9b7NbS6LYlOXYfxcl0Iv5rEj33q05PBo2S4A/H2EsOYbsoJ9bW199LGg3y31NGfrI+ZXlDPJPC5JwbErGGs7ehA8qg7n8r69jnVeIz0ywufyKGhqlY3h4RdZeAxC+Utfvmvb5bUKzxa+xbZYwdDTBVvcgJyRwsPxbIZDKuHDSkkWGcWVRudVZxr3WqWquk6X+Zz+pbduzdnBpfOZ/8AZJB3KD/8i1HwKOdbH9f2FX9RnuEFnT0Zf9wrubv5cvs/2LD6NbY15iymNOaYQI/t3DEEiZGCgsxDAgBfiJI7a0Z6a1dxZBzR2biUQ8O7j9r/AHdrnP5c2lh/DrUFTOWeOuyLkQsPzDBIhkQuUCs+fwZghVL5iGKWJ0Og10qUtJamk1z9yLkJj47A6RSK+ZZn8OMgHVvN5SD8Pwnek9JapSi1yuwbeRmLjKvKYRHKHAUtmUDKGvlJudtOl6eellCG9tY+4CfBOAO9Bh3llK9NxaQJ5oizYZ+4Kke+YD8ia6Hwivbq4zh00zP8N8Qfm+Tb2v8AJRVRlYHS4sR8tRXZyhuTTN6U4yi0aaj3Fx2BH515/LRYk18HD2eIuE8FD1WeTDKNUkZ1/wDpyMWA9xn/ABFdr4dNKiKfwdt4XfLVUx2r2BmL5cmMjSIikHzWzWJYjW2lh1olj2y3Qjk0vwVy5wBpMCwkWOSNo3k0TMVKsxIFma4CDXfW3bW4zrJqU8Sg4tla3fX9SJPCnM2JDSszuilbscxsosPNfWxNWdNTX5if9S/YJpWpWplzlzeGQlr20v3rQZs27nB7ewRJh3eDLJ8e973sRsfz+tWK3jBlThNx9XYAmxmtnF2GnyG1O8JgHc39XZKhw3ofc154kd1Vp8f9hvC4tYorWuTc72Hteui0mohRp0vfshdUl2Dn4o5BBPlPpr7A1V/1ezLzjBVlUmgac0jC+36etY+p1Dullj1USk0vYM7CpdI6DGERnkoW/nJWnLPQP4tj8igD4j+A61YoliWWsmN4trXVVsg/U/2IEnFgUAAIIFtTcVrrxCSr2RWDnZaqLjhLD9+SVgb+AcwUoLv1uT5rfmfwo1MZKndPGOyVT/2m2uFyFsJjo2iMjQYdZdDGBCCLKTfMSbg2HcU8K1OO+SWQsJxcNzSUvbggviJG10HWyiwF9dBfb0o3qa5IO62XOQnguM4lcqhltoBdFJ/K5PvT7Wwqvt+SRLxLGIWLXW58l44wGAIHl8vr+IqVUI+rcht9iLNwfELldFZWdGOfYWLbfCAOn4elc/4zFK/hcYNOnasxXsDuaOJ+DG0huDbKo/ic3y3PUbn5Vl1x3PA+pvVNTl7+wL+xzHKmIxBc+Zoxbuf2i5vxK0+v4rX3ObhL1Ns0rm974V/dP94ongLzrI/Z/sW6vqKFFuPcfnXcz+h/Zllrg1ZjXmEu2UhktUURkVLlBWMMsTZTEs2Jjy2Ob+8YkE3tazHS3WtXXzSsjJZziL/LorxfAG4EScThsMxu2CGKB7lf2aQt7FHH0o96Uap3LqeP+xl8E3k2E+BJCXXIsmIhCZbMD4h/eza/EdLDeq2qa8yMknnh5EiqqTBhMNMAfCeSFnt/8LEQSZHY+jorX9V9atSfmWSy+cf3RDJbcR5OKIb6S4Zlt3aKTN/tNZ650rj8MDZzEOk1UKcpDOJhzoydGBH9D8jWx4ZZKElL4ZzXiE41amFkXyZ9icGzWA+Lodta73OVlHTQujFbn0aFwK5jQN8SqoP+ka1yaandP8mzgPEY7bm49N8GScV4yfvs+KTbxSF7MqjJ+IANXNLa4Rc31k9C8MjLS11RXaj+5Ibm+YiwQD1F60lenykzcfiNjIAlkxMgeRwvh6i463BtYmhOh6iak3jaV5XTnJSb6EwY8iTxMgvYqSNL6gg/h+NSpbhZukibvzNTwFl5msP7s/U//wA1c8+HuWPxzx0MtzA37y/S4/Q0Xz4ID+Kz2gdNjlY3K/X/ANKX4uAGVkW84C2IlI8q7/lXCTb6R6FbZJemPYysR6nMe3Qe9Dbl85Axqy/VyxIjJPf1/pQstsSqcpEmNQDapL6sFuEVF4F4iYKDeiSl7D3WqEW2CFxgVSx9bVGEG2Yb1sa63OTAU8pc5juavxqwjlL75Wzc5dhDh3CC6mRtFBX55mA/WtjSeG7kpzFXRKcXL2DHFrLBlAtcj6DX8wKv61JQ2ou3einb8kXC/wB2PQNagVr0IDB+k6smlNuyTTeDiyG49TUodkHZyIgmszN0RxYdDqD+gqEJuUpfkyKm8/YRguKSQyeKh81ze+zAm5DDsar6muNsGpDwvlXLeuyXzbx5cTHEFBUgsWU7DQAEHr1rE/Dyqk8h9Zq43xjjhgrl3iX3fEJJ+78L/wAraH6aH5Ch31+ZW4mczWMbxHx45lJACIpUX3JKNm9dFP0qp4O3XrYZ/NB6ZPegEjjvXfy6Zp+xqniDvXl8+JMogjmPi33aBpsuaxUWJyi7sqgk2NgL9qNpqPPs2ZBzeFkEYZESWcyYaNGjAn8VLlXLBi5uwFmBXX3FW7XJwilJvPGH7AAbw3jgkw2Ixow8aYlFOfTVlyK6Zm+IqVt1/dqV9EoWRocm4sjkTxSRoMM2N8PCs/7KRWGHII8RlzMWzksfODcEaiowSlZ5WX7+/wACbCOMw+IWB8r4clQzhRhyEawLZcvimxLa5td9qCpQ8z3+OwLlyDzxPEfdYsZ5JNFkkVUykRsB4gQ5j5l1PqAak4V73Xyv19xm1naEuDcRM5mdSDCrhIiBq2VQZHv1GZrD+U0VabEF8mD4haqpqOfU+X/wGcK19DV7RtJYOW8Qbdm4pOLhKsb9CflrXZ1tOKOnpvUq19gvxvGtDw18Qhs/hKgP8zBAw9QDXPaylQulOPvwYmkpjd4kqpLMU2/7LJjpI0Ua6AWHXW5J/wCdKlmHEFz+R3fPLJyZbW0v1tratmpx24Gpby8nM1r6XpZUcss8C42v0qcWpDIUwBFqecE1gmITYUoL0oGxUW23epxisDBSMO+vwjv1rhEm38HoMXO3lcL/ACOf4V26nvUJPPpj0Hjj6YdDsSWFPCOFkPBKKEQNqWpq+HuB1yTbkwJxTHZmIGwqaW55Od8R126xqPSBcsl6vVVqKOfvuc3j2JvCuHeIbt8P51s6LRb3vn0Qrqc/sWybKqW9U0HYG9q3GbUlGMMfYFcdexVP8N/9R/8ALWVqrfVgoa2XqSImHP7P5NQ4SewHDo5n0ocWM5M7E9mHuD9KNGXqRDJFBsWHdifoAP60KpNSnn5Ip8sc4zHGpHhm6nUd7bebXe4Pa+9qhbYnxgViSfAKmbWs7VSTlwQGjVUY0L7PMaZUljcBmWNY0vb4WLD8Bpf2rM1TdNkbYfOf7DxbXR18E6lkZ/hJU2FtiRXfU2eZXGfysmnCEpLOS9cLxBESEsWOVb+9hevN/EY+XqbIr5ZRmlGTR7j2Kc4WXwo1kfLpG65lfUZlK382l9O9qhpppWLLwQcsoq+MeXJiosNFOcO2HsiOkgyzO+QpEsgzZchJsPKLdK0k4txc2tyf+AbY+3C51kkUxII58I0LeEzOA8SFY2clVtdTlGnSmldCSTz0yDkhf9kH+zDEIssrQKGWwDNIgFr+tx+NBd2b8t8A3PEuSdwQqqCMYcwDKC/ljVS1lDaIxufUjpQ7m927dkDKfPY3yphpI8LHFKLMmZeh8udip0PYim1Ek7MxI2Ti5ZR3kzCPBD4Mi2s8mXUG6lrqdD1ua0aboynt9mjnfH61Jq2Ha7LDh1yv6G9verlMVCznpnNXWOyH5oBcQg87FhoWO3vXU1P0LBqae/0KKK/9q2OKQYbDLoGGdv8AIAFFvdiflWDrZvfg0/4cpU7bb330v3Zm8DBTfUn0qNDUHntnVTWUSoFNr2sK1NPnGWsEYyW7GR+Fvi9v61cqfLCyYsnWiZ5JRO5qTZLIyk1tKDXclwyDHopPzqxGawRbBXiHufrXGYRb8yXyzomYbE/Wnwh1dNdN/wBxX3l/42+ppYRP8Rb/APJ/3Zz7y/8AE31NNtQ34m1cbn/caLU6SQJzbO0TcyGB+PGyLoHItViOtvisKTJJtdDj8TmO7k7b26bUnr9Q+5E3bN9sTiMfI5zO1ztew2G2woctTZJ5bIyk5PLPDGPa1+lum1J6q35HUmhP3pu9RWosIuQW4PgZpXW4shNixH5Dc1q6Sq+TUpdFDU+IQpTxy/gi4tMsjr/CzL9CRRpcPBbrs8yKl8rJCmqtd0PJkY1ky7GOVERaPs6xITF5SbB0Ya9xZh+ANUtfDdVn4Hj2WrjGD/bvZ9DZre41/G9dR4LbKzRwb9uP7GnRFyh2WDgkAEClpGJu1gANgT/3rlPH4KOtlj3SbK2phGEnkkPiLbCsdFCdvwcPEYwbM6qexYD86LGMmuEQ3ZJCYlG2YH2Ip2n8EWLJpAZDTLU1HPJQsvjB4Y0tztU4Uyl0VrdfXWuWPIhGtquVaacZKTRlarXwtg4phGNbi9bMUpLJzssxYOxqHxNNb20+mlbOnf8As8lyp+gzD7VsYHxxUE/so0Q9s2rm3+sD5VhXP1nZ/wAO0uvRJv8Aqbf/AB/wVKE362HX/tRKZNvGcI2pJEpJLm5uANFH61pUWNvMuF7AtqXC7HYm1PtVyuWGwzFFtvapuXQ6Fk6URy4HGFGtVIrMhM6rWv71Pdjgi0Qa5osHCaQsnKYbJ61IWDtIR69OLJ6pJIWT1M8DHhSUsDo8Wpm8ibOA08PqX3IS6NTRbIo20Fdkjh5NubM9x7ftZP52/wBxrLt4mzs6HiqP2RCmNUtTLCJjVZrJHL0wxL4NiHSeJ0OVg62J21NtfSxN/SoWLMWmLJpHMIgkkQiyNl82Q2BN+g9P1rT/AIci/Ikm/fouaVwmnyTeAYaXwzllBAYgBvYH9ay/4jrjHUp+7XJHU1yUuGSsXjDGjPKmigkkaiwrBhDdJJFRp+6Mfx+JMsjSN8TEk/PoPQbfKtyMVGO1BMIj5RUsjYHUnZfhZh7Ej8qbCGaQ+vFMQNp5R7SOP1ptsfgg6oPtIei4/i12xM3/ANxj+Zp1FLoDPR6ef1QT/QlJzdjh/wDMv8wp/MVLLK78J0b/APbQ/Dz1xBTpPf3jjP8A+tTjKS6YGXgehl3X/l//AGOf+Pcdmzl0J0P92vT2qzHV2xjtQ3+haTbt28fcr/EcY00rzPbO7FmtoLnsO1Vm3nJpVVRqgq49JYGo3ttRq7nDpEnDI+s5201+dWFrpL2IeSsnVexqcda084C4O+N6UT/UPyHSOnE+lT/1FNdC2iVnF71COtimLAl5hfSpy11bZFoYtWQGweFIfB2kI9SEepCPWpZFg9TiOGmGYm9MMepDHhU4fUiL6NIwXEY3IRSTYAZreS9vhBrrYWxm/ScldpbK05y/t7lH4h/eyfzt/uNZ1v1M6en+XH7IhSGszVS5wFQiqhI5amESuGRBpFv8K+Z/RV1P9PnRtNBTsWely/siE5YRbMFP48alvMf3id8w3N/XQ10Gi09OPNgsNrDNHT1Qa3f3CvDpPCBAZt7gbjbWsjx7w+y6cZ1RzxyB1dc1hw5BPN3FWKCIMfNqw9AdB9dflWFVpJ0yzZHDKVTsbe/gpxq0HOCkI9akMKFIR6kI4aQsCbVNCOU4561IbB2kLApN6QiQ1OMNtSHEmkOJNIRy1IY7SJnqQj1IR6kLB6mHPUhhJNOM2cpiJ6nEcphjtIWC2cty2jTX9+3rvXUeHP8A8eJha+ObH9iv8Qf9rJ/O3+41mW3Ysa/M1qf5cfsiI1ULnulkKhNCJHr0wglhJUXDyjXxGsNAfhuuhNrAb1epsrhp5r+p/sBkm5p+xL5d4gqXRjbsT/zervhmsjFOubx8F/TWqHDLTE6kXJ0tvWw5cZXRopxayyk8TxXiSM3S+nsNq5DV3O61yMu2e6WSHaq4M5akI7akI7SEepCOU4jhp0I5UhHqQj1qQhaCkIXenGwevSHG3phCacR6kIVSJHjSEepCPGkOeFMMcNITE0iB6kI9TjHKYR2kOWTl34Y/5v1rp/Dv/TxMXXfVL7AXif8AfSfzv/uNYup/mS+7NKj+XH7IjP09v1NVp+wZCagxxNMyITm/uz/Kn5RVZf0foRB9VmF9g7wb/wB3k/lb8q1tJ/Jl9g1P0sESVighFIR6kI6KQj1IR40hHKcRw06EcNSQj1IR6kIXHSEKNOI8KQjjUwhukMdNIc//2Q==");
         }
-
-        .service-card:hover:before {
-            transform: scale(1.5) rotate(45deg);
+        .service-card:nth-child(7){
+            background-image: url("https://theexpertsecurity.com/wp-content/uploads/2024/07/rai-bodyguard-team-jalandhar-city-jalandhar-security-services-ql8tj0bisb-768x576-1.webp");
+        }
+        .service-card:nth-child(8){
+            background-image: url("https://theexpertsecurity.com/wp-content/uploads/2024/07/istockphoto-1433069475-612x612-1.jpg");
         }
 
         .service-card:hover {
-            transform: scale(1.05) translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-card:hover::before {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.75) 0%, rgba(27, 58, 95, 0.65) 100%);
         }
 
         .service-number {
-            font-size: 3rem;
-            font-weight: 800;
+            font-size: 4rem;
+            font-weight: 900;
             color: var(--accent-gold);
-            opacity: 0.3;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
+            opacity: 0.25;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+            line-height: 1;
+            letter-spacing: -2px;
         }
 
         .service-card:hover .service-number {
-            opacity: 0.6;
-            transform: scale(1.1);
+            opacity: 0.4;
+            transform: scale(1.1) translateY(-5px);
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
-            font-weight: 700;
-            position: relative;
-            z-index: 1;
+            font-weight: 800;
+            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .service-card p {
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
+            opacity: 0.95;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: auto;
+        }
+
+        /* Icon/Arrow indicator */
+        .service-card::before {
+            content: "";
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(212, 175, 55, 0.4);
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .view-all-services{
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
         }
 
         /* Stats Section */
@@ -461,7 +534,7 @@
 
         /* Gallery Section */
         .gallery-section {
-            padding: 6rem 2rem;
+            padding: 4rem 2rem;
             background: var(--light-bg);
         }
 
@@ -495,7 +568,7 @@
         }
 
         .gallery-item:hover img {
-            transform: scale(1.15) rotate(2deg);
+            transform: scale(1.15);
         }
 
         .gallery-overlay {
@@ -521,7 +594,7 @@
 
         /* Testimonials */
         .testimonials-section {
-            padding: 6rem 2rem;
+            padding: 4rem 2rem;
             background: var(--white);
         }
 
@@ -539,6 +612,9 @@
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
+            transform: translateY(0);
+            border: 1px solid var(--accent-gold);
+
         }
 
         .testimonial-card:hover {
@@ -581,7 +657,7 @@
         }
 
         .testimonial-card:hover .author-avatar {
-            transform: scale(1.2) rotate(360deg);
+            transform: scale(1.2);
         }
 
         .author-info h4 {
@@ -598,37 +674,48 @@
         .partners-section {
             padding: 6rem 2rem;
             background: var(--light-bg);
+            overflow: hidden;
         }
 
-        .partner-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
+        .partner-marquee-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
             margin-top: 3rem;
-            align-items: center;
         }
 
-        .partner-item {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+        .partner-marquee {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 4rem;
+            animation: marquee 30s linear infinite;
+            will-change: transform;
         }
 
-        .partner-item:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        .partner-marquee:hover {
+            animation-play-state: paused;
         }
 
-        .partner-item-content {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-blue);
-            text-align: center;
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Logos only (no boxes/cards) */
+        .partner-logo {
+            flex-shrink: 0;
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+            transform: translateY(-2px);
         }
 
         /* CTA Section */
@@ -721,13 +808,38 @@
         }
 
         .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             text-align: center;
+            font-size: 0.9rem;
+            color: var(--white);
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             opacity: 0.7;
         }
 
+        .footer-bottom a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--white);
+        }
+        .footer-bottom p {
+            margin: 0;
+        }
+
         /* Responsive */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .mobile-toggle {
                 display: flex;
@@ -774,13 +886,37 @@
             }
 
             .about-grid,
-            .services-grid,
             .testimonial-grid {
                 grid-template-columns: 1fr;
             }
 
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                min-height: 280px;
+                padding: 30px 25px;
+            }
+            
+            .service-number {
+                font-size: 3rem;
+            }
+            
+            .service-card h3 {
+                font-size: 1.4rem;
+            }
+
             .logo-text h1 {
                 font-size: 1.2rem;
+            }
+
+            .partner-logo {
+                height: 56px;
+            }
+
+            .partner-marquee {
+                gap: 2rem;
             }
         }
     </style>
@@ -848,27 +984,99 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <div class="section-label">WHAT WE OFFER</div>
+                <h2 class="section-title">Comprehensive <span class="hero-highlight">Security Solutions</span></h2>
+                <p class="section-subtitle">From corporate guarding to VIP protection, we provide specialized security services tailored to your unique requirements.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card scale-in">
+                    <div>
+                        <div class="service-number">01</div>
+                        <h3>Guarding</h3>
+                    </div>
+                    <p>Expert manned guarding services for residential, commercial, and industrial properties with trained security personnel.</p>
+                </div>
+                <div class="service-card scale-in">
+                    <div>
+                        <div class="service-number">02</div>
+                        <h3>24×7 Vigilance</h3>
+                    </div>
+                    <p>Round-the-clock security monitoring and surveillance to ensure continuous protection of your valuable assets.</p>
+                </div>
+                <div class="service-card scale-in">
+                    <div>
+                        <div class="service-number">03</div>
+                        <h3>VIP Protection</h3>
+                    </div>
+                    <p>Elite close protection services for VIPs, executives, celebrities, and high-profile individuals requiring discrete security.</p>
+                </div>
+                <div class="service-card scale-in">
+                    <div>
+                        <div class="service-number">04</div>
+                        <h3>QR Team</h3>
+                    </div>
+                    <p>Rapid deployment security units ready to respond to emergency situations and critical incidents at a moment's notice.</p>
+                </div>
+                <div class="service-card scale-in">
+                    <div>
+                        <div class="service-number">05</div>
+                        <h3>Security Audits</h3>
+                    </div>
+                    <p>Comprehensive security assessments and vulnerability analysis to identify risks and recommend protective measures.</p>
+                </div>
+                <div class="service-card scale-in">
+                    <div>
+                        <div class="service-number">06</div>
+                        <h3>Event Security</h3>
+                    </div>
+                    <p>Specialized security management for corporate events, conferences, exhibitions, and large gatherings.</p>
+                </div>
+                <div class="service-card scale-in">
+                    <div>
+                        <div class="service-number">07</div>
+                        <h3>Bouncer Services</h3>
+                    </div>
+                    <p>Professional bouncer services for events, establishments, and venues requiring crowd control and security maintenance.</p>
+                </div>
+                <div class="service-card scale-in">
+                    <div>
+                        <div class="service-number">08</div>
+                        <h3>Gunman Services</h3>
+                    </div>
+                    <p>Professional gunman services for protection of high-risk individuals, VIPs, and special events requiring armed security personnel.</p>
+                </div>
+            </div>
+        </div>
+        <div class="view-all-services">
+            <a href="services.html" class="btn btn-primary">View All Services</a>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about-section" id="about">
         <div class="section-container">
             <div class="section-header fade-in">
                 <div class="section-label">WHO WE ARE</div>
-                <h2 class="section-title">Leading Security Guard Provider</h2>
+                <h2 class="section-title"><span class="hero-highlight">Leading Security</span> Guard Provider</h2>
                 <p class="section-subtitle">Expert Security Services is India's trusted provider of professional security guards and security personnel, delivering trained uniformed guards to protect your premises with unwavering commitment to safety and professionalism.</p>
             </div>
             <div class="about-grid">
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">🔒</div>
+                    <div><img src="https://poonasecurity.com/wp-content/uploads/2021/04/1111_5_11zon-1.jpg" alt="Compliance & Certification" width="100" height="100"></div>
                     <h3>Compliance & Certification</h3>
                     <p>Fully licensed under PSARA and certified to ISO 9001:2015 standards, ensuring legal compliance and quality management in every operation.</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">🎯</div>
+                    <div><img src="https://poonasecurity.com/wp-content/uploads/2021/04/policeman_11_11zon-1.jpg" alt="Expert Security Guards" width="100" height="100"></div>
                     <h3>Expert Security Guards</h3>
                     <p>Rigorously trained and background-verified security guards in uniform, equipped with the latest skills and knowledge to handle any security challenge at your premises.</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">🌐</div>
+                    <div><img src="https://poonasecurity.com/wp-content/uploads/2021/04/ezgif.com-gif-maker__2_-removebg-preview_7_11zon-1.jpg" alt="Pan-India Presence" width="100" height="100"></div>
                     <h3>Pan-India Presence</h3>
                     <p>Comprehensive coverage across major cities and locations throughout India, deploying security guards wherever you need protection.</p>
                 </div>
@@ -876,48 +1084,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="section-container">
-            <div class="section-header fade-in">
-                <div class="section-label">WHAT WE OFFER</div>
-                <h2 class="section-title">Comprehensive Security Solutions</h2>
-                <p class="section-subtitle">From corporate guarding to VIP protection, we provide specialized security services tailored to your unique requirements.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card scale-in">
-                    <div class="service-number">01</div>
-                    <h3>Professional Guarding</h3>
-                    <p>Expert manned guarding services for residential, commercial, and industrial properties with trained security personnel.</p>
-                </div>
-                <div class="service-card scale-in">
-                    <div class="service-number">02</div>
-                    <h3>24×7 Vigilance</h3>
-                    <p>Round-the-clock security monitoring and surveillance to ensure continuous protection of your valuable assets.</p>
-                </div>
-                <div class="service-card scale-in">
-                    <div class="service-number">03</div>
-                    <h3>VIP Protection</h3>
-                    <p>Elite close protection services for VIPs, executives, celebrities, and high-profile individuals requiring discrete security.</p>
-                </div>
-                <div class="service-card scale-in">
-                    <div class="service-number">04</div>
-                    <h3>Quick Response Team</h3>
-                    <p>Rapid deployment security units ready to respond to emergency situations and critical incidents at a moment's notice.</p>
-                </div>
-                <div class="service-card scale-in">
-                    <div class="service-number">05</div>
-                    <h3>Security Audits</h3>
-                    <p>Comprehensive security assessments and vulnerability analysis to identify risks and recommend protective measures.</p>
-                </div>
-                <div class="service-card scale-in">
-                    <div class="service-number">06</div>
-                    <h3>Event Security</h3>
-                    <p>Specialized security management for corporate events, conferences, exhibitions, and large gatherings.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Stats Section -->
     <section class="stats-section">
@@ -946,41 +1112,41 @@
         <div class="section-container">
             <div class="section-header fade-in">
                 <div class="section-label">OUR WORK</div>
-                <h2 class="section-title">Security in Action</h2>
+                <h2 class="section-title">Security in <span class="hero-highlight">Action </span></h2>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item scale-in">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80" alt="Professional Security Guards">
+                    <img src="https://theexpertsecurity.com/wp-content/uploads/2024/07/5447cf11-af42-4789-9abe-75224327c08a-768x576-1.jpg" alt="Professional Security Guards">
                     <div class="gallery-overlay">
                         <h3>Professional Security Guards</h3>
                     </div>
                 </div>
                 <div class="gallery-item scale-in">
-                    <img src="https://images.unsplash.com/photo-1597481732491-2d17e8032e21?w=800&q=80" alt="Security Personnel on Duty">
+                    <img src="https://theexpertsecurity.com/wp-content/uploads/2024/07/HutHMWVRMwXm.jpeg" alt="Security Personnel on Duty">
                     <div class="gallery-overlay">
                         <h3>Security Personnel on Duty</h3>
                     </div>
                 </div>
                 <div class="gallery-item scale-in">
-                    <img src="https://images.unsplash.com/photo-1626814029240-89bde2a1fad7?w=800&q=80" alt="Security Training Session">
+                    <img src="https://theexpertsecurity.com/wp-content/uploads/2024/07/DzKubpLFCJUk.jpeg" alt="Security Training Session">
                     <div class="gallery-overlay">
                         <h3>Security Training Session</h3>
                     </div>
                 </div>
                 <div class="gallery-item scale-in">
-                    <img src="https://images.unsplash.com/photo-1594834841132-0af3a1a0e5c6?w=800&q=80" alt="Site Security Deployment">
+                    <img src="https://theexpertsecurity.com/wp-content/uploads/2024/07/UHbOnLPGQSOf.jpeg" alt="Site Security Deployment">
                     <div class="gallery-overlay">
                         <h3>Site Security Deployment</h3>
                     </div>
                 </div>
                 <div class="gallery-item scale-in">
-                    <img src="https://images.unsplash.com/photo-1626992909889-6c7ce03b6d70?w=800&q=80" alt="Security Equipment and Technology">
+                    <img src="https://theexpertsecurity.com/wp-content/uploads/2024/07/UHbOnLPGQSOf.jpeg" alt="Security Equipment and Technology">
                     <div class="gallery-overlay">
                         <h3>Security Equipment and Technology</h3>
                     </div>
                 </div>
                 <div class="gallery-item scale-in">
-                    <img src="https://images.unsplash.com/photo-1581578021424-ebdc0b1b0e4d?w=800&q=80" alt="VIP Protection Service">
+                    <img src="https://poonasecurity.com/wp-content/uploads/2021/04/Bouncer-Service-1-scaled_11zon-2-2.jpg" alt="VIP Protection Service">
                     <div class="gallery-overlay">
                         <h3>VIP Protection Service</h3>
                     </div>
@@ -994,7 +1160,7 @@
         <div class="section-container">
             <div class="section-header fade-in">
                 <div class="section-label">CLIENT FEEDBACK</div>
-                <h2 class="section-title">Trusted by Industry Leaders</h2>
+                <h2 class="section-title">Trusted by <span class="hero-highlight">Industry Leaders</span></h2>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card slide-in-left">
@@ -1039,20 +1205,46 @@
         <div class="section-container">
             <div class="section-header fade-in">
                 <div class="section-label">COMPANY PARTNERS</div>
-                <h2 class="section-title">Trusted by Industry Leaders</h2>
+                <h2 class="section-title">Our <span class="hero-highlight"> Happy Clients</span></h2>
             </div>
-            <div class="partner-grid">
-                <div class="partner-item scale-in">
-                    <div class="partner-item-content">TATA</div>
-                </div>
-                <div class="partner-item scale-in">
-                    <div class="partner-item-content">Reliance</div>
-                </div>
-                <div class="partner-item scale-in">
-                    <div class="partner-item-content">Mahindra</div>
-                </div>
-                <div class="partner-item scale-in">
-                    <div class="partner-item-content">Adani</div>
+            <div class="partner-marquee-wrapper">
+                <div class="partner-marquee">
+                    <!-- First set of logos -->
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/fMjLjZhUWIzA.jpeg" alt="TATA" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/pPCjMaViHVHu.jpeg" alt="Reliance" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/WCKnMDLfgoPR.jpeg" alt="Mahindra" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/mOXCJCCGliri.jpeg" alt="Adani" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/xEzEEBilFQsq.jpeg" alt="Infosys" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/QdQiIrOwkAsr.jpeg" alt="Wipro" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/DmZoufrScyHv.jpeg" alt="Bajaj" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/vqIOQnfkOoAo.jpeg" alt="HDFC" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/SMMBwYbxDyZn.jpeg" alt="ICICI" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/ZZQeQUlZkjap.jpeg" alt="SBI" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/YhNEyOrRIMxN.jpeg" alt="Axis Bank" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/dFtITDSGdRzB.jpeg" alt="HDFC Bank" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/pVJXtXqRPlQW.jpeg" alt="Kotak Mahindra Bank" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/mnfHigyJKWrC.jpeg" alt="IDBI Bank" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/FxKbAvTGAuIK.jpeg" alt="Punjab National Bank" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/AVfvjyYtdeaQ.jpeg" alt="State Bank of India" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/jfiZNyDXBonI.jpeg" alt="Union Bank of India" loading="lazy">
+                    <!-- Duplicate set for seamless loop -->
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/fMjLjZhUWIzA.jpeg" alt="TATA" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/pPCjMaViHVHu.jpeg" alt="Reliance" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/WCKnMDLfgoPR.jpeg" alt="Mahindra" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/mOXCJCCGliri.jpeg" alt="Adani" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/xEzEEBilFQsq.jpeg" alt="Infosys" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/QdQiIrOwkAsr.jpeg" alt="Wipro" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/DmZoufrScyHv.jpeg" alt="Bajaj" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/vqIOQnfkOoAo.jpeg" alt="HDFC" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/SMMBwYbxDyZn.jpeg" alt="ICICI" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/ZZQeQUlZkjap.jpeg" alt="SBI" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/YhNEyOrRIMxN.jpeg" alt="Axis Bank" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/dFtITDSGdRzB.jpeg" alt="HDFC Bank" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/pVJXtXqRPlQW.jpeg" alt="Kotak Mahindra Bank" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/mnfHigyJKWrC.jpeg" alt="IDBI Bank" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/FxKbAvTGAuIK.jpeg" alt="Punjab National Bank" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/AVfvjyYtdeaQ.jpeg" alt="State Bank of India" loading="lazy">
+                    <img class="partner-logo" src="https://theexpertsecurity.com/wp-content/uploads/2024/07/jfiZNyDXBonI.jpeg" alt="Union Bank of India" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1061,7 +1253,7 @@
     <!-- Contact Section -->
     <section class="cta-section" id="contact">
         <div class="cta-content fade-in">
-            <h2>Ready to Secure Your Premises?</h2>
+            <h2>Ready to <span class="hero-highlight">Secure</span> Your Premises?</h2>
             <p>Get in touch with our security experts today for a comprehensive security assessment and customized protection plan.</p>
             <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
         </div>
@@ -1097,13 +1289,14 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p>📍 123 Security Avenue<br>Mumbai, India 400001</p>
-                <p>📞 +91 98765 43210<br>📞 +91 98765 43211</p>
+                <p>📍 No 3/3, Outer Ring Road<br>Mahadevapura, Bangalore - 560048<br>(Opposite More Mega Store)</p>
+                <p>📞 +91 9731731488<br>📞 08029918480</p>
                 <p>✉️ info@expertsecurity.com</p>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Expert Security Services. All Rights Reserved. | PSARA Licensed | ISO 9001:2015 Certified</p>
+            <p>Designed & Developed by <a href="https://quantum-solutions-indol.vercel.app/" target="_blank">Quantum Solutions ↗️</a></p>
         </div>
     </footer>
 
