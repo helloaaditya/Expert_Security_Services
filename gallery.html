@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Expert Security Services Operations & Workforce</title>
+    <meta name="description" content="Explore Expert Security Services' gallery showcasing trained security personnel, site deployments, training programs, and operational excellence.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+
+        /* Page Header / Hero */
+        .gallery-hero {
+            height: 50vh;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9), rgba(27, 58, 95, 0.85)),
+                        url('gallery_top.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--light-bg));
+        }
+
+        .gallery-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 0 1.5rem;
+        }
+
+        .gallery-hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Gallery Section */
+        .gallery-content {
+            padding: 4rem 2rem 6rem;
+            background: var(--light-bg);
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-links li:hover {
+            transform: translateX(10px);
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-dark);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            nav ul.show {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .logo h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="logo_square.png" alt="Expert Security Services" width="50" height="50">
+                <h2>Expert Security Services</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="gallery-hero">
+        <div class="gallery-hero-content fade-in">
+            <h1>Operations Gallery</h1>
+            <p>A closer look at our on-ground security deployments, training, and technology in action.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Content -->
+    <section class="gallery-content">
+        <div class="gallery-container">
+            <div class="gallery-header fade-in">
+                <div class="section-label">GALLERY</div>
+                <h2 class="section-title">Our Operations Gallery</h2>
+                <p class="section-subtitle">Explore our gallery showcasing trained security personnel, site deployments, training programs, and operational excellence.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1597481732491-2d17e8032e21?w=800&q=80" alt="Security Guards in Uniform">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80" alt="Security Personnel on Duty">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1626814029240-89bde2a1fad7?w=800&q=80" alt="Security Training Session">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1594834841132-0af3a1a0e5c6?w=800&q=80" alt="Site Security Deployment">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1626992909889-6c7ce03b6d70?w=800&q=80" alt="Security Equipment and Technology">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1581578021424-ebdc0b1b0e4d?w=800&q=80" alt="VIP Protection Service">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1594834841132-0af3a1a0e5c6?w=800&q=80" alt="Quick Response Team in Action">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1597481732491-2d17e8032e21?w=800&q=80" alt="Security Personnel Training">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1626814029240-89bde2a1fad7?w=800&q=80" alt="Event Security">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80" alt="Corporate Security">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1594834841132-0af3a1a0e5c6?w=800&q=80" alt="Fire Safety Drill">
+                </div>
+                <div class="gallery-item scale-in">
+                    <img src="https://images.unsplash.com/photo-1626992909889-6c7ce03b6d70?w=800&q=80" alt="Security Audit">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Expert Security Services</h3>
+                <p>India's premier PSARA licensed and ISO certified security services provider with decades of experience in delivering comprehensive protection solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html">Guarding Services</a></li>
+                    <li><a href="services.html">VIP Protection</a></li>
+                    <li><a href="services.html">Quick Response Team</a></li>
+                    <li><a href="services.html">Security Audits</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📍 123 Security Avenue<br>Mumbai, India 400001</p>
+                <p>📞 +91 98765 43210<br>📞 +91 98765 43211</p>
+                <p>✉️ info@expertsecurity.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Expert Security Services. All Rights Reserved. | PSARA Licensed | ISO 9001:2015 Certified</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Expert Security Services - 25+ Years of Excellence</title>
+    <meta name="description" content="Learn about Expert Security Services, established with decades of experience, delivering professional security services across India.">
+    <link rel="icon" href="logo_square.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Page Header */
+        .page-header {
+            height: 50vh;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9), rgba(15, 59, 111, 0.85)), 
+                        url('front-view-guard-men-team-work.jpg') center/contain no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--white));
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-header p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Company Introduction */
+        .company-intro {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .intro-image {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .intro-text h2 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .intro-text h2 .highlight {
+            color: var(--accent-gold);
+        }
+
+        .intro-text p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .intro-text .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        /* Company Story */
+        .company-story {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .story-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-content h2 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+
+        .story-content p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-align: left;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.14);
+        }
+
+        .feature-icon {
+            height: 180px;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .feature-card:hover .feature-icon img {
+            transform: scale(1.06);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Mission Vision Section */
+        .mvv-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mvv-card {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            padding: 3.5rem;
+            border-radius: 20px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        .mvv-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .mvv-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mvv-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .mvv-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .mvv-card p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            opacity: 0.95;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 2.3rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: left;
+            transition: all 0.3s;
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.14);
+        }
+
+        .value-icon {
+            height: 140px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .value-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .value-card:hover .value-icon img {
+            transform: scale(1.05);
+        }
+
+        .value-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .value-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Security Personnel Section */
+        .personnel-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.95), rgba(27, 58, 95, 0.9)),
+                        url('https://images.unsplash.com/photo-1626814029240-89bde2a1fad7?w=1920&q=80') center/cover fixed;
+            color: var(--white);
+            position: relative;
+        }
+
+        .personnel-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .personnel-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+
+        .personnel-content p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .personnel-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .personnel-feature {
+            padding: 2rem;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.25);
+            text-align: left;
+        }
+
+        .personnel-feature-icon {
+            height: 130px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .personnel-feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .personnel-feature:hover .personnel-feature-icon img {
+            transform: scale(1.06);
+        }
+
+        .personnel-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: var(--accent-gold);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: var(--primary-dark);
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-dark);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(13, 27, 42, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(13, 27, 42, 0.4);
+        }
+
+        /* Responsive - page specific tweaks */
+        @media (max-width: 968px) {
+            .intro-grid,
+            .mvv-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+
+            .intro-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-dark);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+            }
+
+            .intro-text h2,
+            .section-header h2,
+            .personnel-content h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="logo_square.png" alt="Expert Security Services" width="50" height="50">
+                <h2>Expert Security Services</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content fade-in">
+            <h1>About Us</h1>
+            <p>Building Trust Through Excellence in Security Services Since Decades</p>
+        </div>
+    </section>
+
+    <!-- Company Introduction -->
+    <section class="company-intro">
+        <div class="section-container">
+            <div class="intro-grid">
+                <div class="intro-image slide-in-left">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=80" alt="Professional Security Guards in Uniform">
+                </div>
+                <div class="intro-text slide-in-right">
+                    <h2>India's Most Trusted <span class="highlight">Security Partner</span></h2>
+                    <p class="lead">PSARA Licensed & ISO 9001:2015 Certified</p>
+                    <p>Expert Security Services has been at the forefront of professional security guard services for over 25 years, providing trained security personnel to hundreds of prestigious clients across India with unwavering commitment and excellence.</p>
+                    <p>Founded with a vision to redefine security standards, we have grown from a modest security provider into one of India's most respected and trusted security guard companies. We specialize in deploying professional security guards and security personnel to protect your premises, assets, and people.</p>
+                    <p>Today, we protect what matters most to our clients - their people, property, and peace of mind - by providing highly trained, uniformed security guards who are background-verified, professionally trained, and ready to serve 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="company-story">
+        <div class="section-container">
+            <div class="story-content fade-in">
+                <h2>Our Journey of Excellence</h2>
+                <p>What began as a commitment to provide reliable security services has evolved into a legacy of trust, professionalism, and innovation. Over the decades, we have consistently raised the bar in security services, adapting to emerging challenges while maintaining our core values of integrity and excellence.</p>
+                <p>Our success is built on a foundation of rigorous training, strict compliance with regulations, and a deep understanding of our clients' unique security needs. We provide professional security guards who are not just watchmen, but trained security personnel equipped to handle any security challenge with professionalism and dedication.</p>
+            </div>
+
+            <div class="feature-cards">
+                <div class="feature-card scale-in">
+                    <div class="feature-icon">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&q=80" alt="Security Guards with Years of Experience">
+                    </div>
+                    <h3>25+ Years</h3>
+                    <p>Decades of experience providing professional security guards to diverse industries</p>
+                </div>
+                <div class="feature-card scale-in">
+                    <div class="feature-icon">
+                        <img src="https://images.unsplash.com/photo-1597481732491-2d17e8032e21?w=900&q=80" alt="Team of Security Guards">
+                    </div>
+                    <h3>5000+ Security Guards</h3>
+                    <p>Highly trained security guards in uniform ready to protect your assets 24/7</p>
+                </div>
+                <div class="feature-card scale-in">
+                    <div class="feature-icon">
+                        <img src="https://images.unsplash.com/photo-1626814029240-89bde2a1fad7?w=900&q=80" alt="Security Guards at Client Sites">
+                    </div>
+                    <h3>500+ Clients</h3>
+                    <p>Trusted by leading organizations who rely on our security guard services nationwide</p>
+                </div>
+                <div class="feature-card scale-in">
+                    <div class="feature-icon">
+                        <img src="https://images.unsplash.com/photo-1594834841132-0af3a1a0e5c6?w=900&q=80" alt="Security Guards Deployed Across India">
+                    </div>
+                    <h3>Pan-India Presence</h3>
+                    <p>Security guards deployed across 200+ locations throughout India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mvv-section">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <h2>Our Mission & Vision</h2>
+                <p>The driving force behind everything we do</p>
+            </div>
+
+            <div class="mvv-grid">
+                <div class="mvv-card slide-in-left">
+                    <div class="mvv-card-content">
+                        <div class="mvv-icon">🎯</div>
+                        <h3>Our Mission</h3>
+                        <p>To deliver dependable, compliant, and professional security solutions that enable our clients to focus on their core business operations with complete peace of mind. We are committed to protecting people, property, and assets while maintaining the highest standards of integrity, discipline, and reliability in every service we provide.</p>
+                    </div>
+                </div>
+
+                <div class="mvv-card slide-in-right">
+                    <div class="mvv-card-content">
+                        <div class="mvv-icon">🔭</div>
+                        <h3>Our Vision</h3>
+                        <p>To be recognized as India's most trusted and innovative security services provider, setting industry benchmarks through excellence, professionalism, and continuous improvement. We envision a future where our clients view us not just as vendors, but as indispensable partners in their safety and security journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="values-section">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide our every action and decision</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card scale-in">
+                    <div class="value-icon">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80" alt="Integrity and trust in security services">
+                    </div>
+                    <h4>Integrity</h4>
+                    <p>Our security guards conduct themselves with honesty, transparency, and ethical practices</p>
+                </div>
+                <div class="value-card scale-in">
+                    <div class="value-icon">
+                        <img src="https://images.unsplash.com/photo-1597481732491-2d17e8032e21?w=800&q=80" alt="Disciplined Security Guards">
+                    </div>
+                    <h4>Discipline</h4>
+                    <p>Our security guards maintain strict professional standards and protocols</p>
+                </div>
+                <div class="value-card scale-in">
+                    <div class="value-icon">
+                        <img src="https://images.unsplash.com/photo-1626814029240-89bde2a1fad7?w=800&q=80" alt="Compliant Security Guards">
+                    </div>
+                    <h4>Compliance</h4>
+                    <p>All our security guards meet PSARA and regulatory requirements</p>
+                </div>
+                <div class="value-card scale-in">
+                    <div class="value-icon">
+                        <img src="https://images.unsplash.com/photo-1594834841132-0af3a1a0e5c6?w=800&q=80" alt="Excellent Security Guard Service">
+                    </div>
+                    <h4>Excellence</h4>
+                    <p>Striving for perfection in security guard deployment and service delivery</p>
+                </div>
+                <div class="value-card scale-in">
+                    <div class="value-icon">
+                        <img src="https://images.unsplash.com/photo-1581578021424-ebdc0b1b0e4d?w=800&q=80" alt="Innovative Security Guard Solutions">
+                    </div>
+                    <h4>Innovation</h4>
+                    <p>Training our security guards with modern practices and technology</p>
+                </div>
+                <div class="value-card scale-in">
+                    <div class="value-icon">
+                        <img src="https://images.unsplash.com/photo-1626992909889-6c7ce03b6d70?w=800&q=80" alt="Reliable Security Guards">
+                    </div>
+                    <h4>Reliability</h4>
+                    <p>Dependable security guards you can trust to protect your premises</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Personnel -->
+    <section class="personnel-section">
+        <div class="personnel-content fade-in">
+            <h2>Our Security Guards & Personnel</h2>
+            <p>At the heart of our service excellence are our highly trained security guards. Each security guard we provide undergoes rigorous training, background verification, and continuous skill development to ensure they meet our exacting standards.</p>
+            <p>Our security guards are not just watchmen; they are trained professionals in uniform who understand the nuances of modern security, customer service, and emergency response. We provide security guards who are ready to protect your premises, assets, and people.</p>
+
+            <div class="personnel-features">
+                <div class="personnel-feature scale-in">
+                    <div class="personnel-feature-icon">
+                        <img src="https://images.unsplash.com/photo-1626814029240-89bde2a1fad7?w=800&q=80" alt="Security Guards in Training">
+                    </div>
+                    <h4>Rigorous Training</h4>
+                    <p>Structured classroom and on-ground training modules aligned with PSARA standards for all security guards.</p>
+                </div>
+                <div class="personnel-feature scale-in">
+                    <div class="personnel-feature-icon">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80" alt="Verified Security Guards">
+                    </div>
+                    <h4>Background Verified</h4>
+                    <p>Every security guard we provide is thoroughly vetted through multi-level background checks.</p>
+                </div>
+                <div class="personnel-feature scale-in">
+                    <div class="personnel-feature-icon">
+                        <img src="https://images.unsplash.com/photo-1597481732491-2d17e8032e21?w=800&q=80" alt="Professional Security Guards">
+                    </div>
+                    <h4>Professional Conduct</h4>
+                    <p>Strong focus on discipline, grooming, and customer-friendly communication from our security guards on site.</p>
+                </div>
+                <div class="personnel-feature scale-in">
+                    <div class="personnel-feature-icon">
+                        <img src="https://images.unsplash.com/photo-1594834841132-0af3a1a0e5c6?w=800&q=80" alt="Emergency Trained Security Guards">
+                    </div>
+                    <h4>Emergency Trained</h4>
+                    <p>Specialised drills for fire, medical and evacuation scenarios for all our security guards to minimise incident impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content fade-in">
+            <h2>Partner With Industry Leaders</h2>
+            <p>Experience the difference that professional security services make</p>
+            <a href="contact.html" class="btn btn-primary">Get in Touch Today</a>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="logo-text">
+                    <h1>Expert Security Services</h1>
+                </div>
+                <p>India's premier PSARA licensed and ISO certified security services provider with decades of experience in delivering comprehensive protection solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html">Guarding Services</a></li>
+                    <li><a href="services.html">VIP Protection</a></li>
+                    <li><a href="services.html">Quick Response Team</a></li>
+                    <li><a href="services.html">Security Audits</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📍 123 Security Avenue<br>Mumbai, India 400001</p>
+                <p>📞 +91 98765 43210<br>📞 +91 98765 43211</p>
+                <p>✉️ info@expertsecurity.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Expert Security Services. All Rights Reserved. | PSARA Licensed | ISO 9001:2015 Certified</p>
+        </div>
+    </footer>
+
+</body>
+</html>
