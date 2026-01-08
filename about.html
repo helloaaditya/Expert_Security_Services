@@ -475,6 +475,7 @@
         }
 
         @media (max-width: 768px) {
+            /* Header & Navigation */
             .mobile-toggle {
                 display: flex;
             }
@@ -485,28 +486,270 @@
                 top: 100%;
                 left: 0;
                 right: 0;
+                width: 100%;
                 background: var(--primary-dark);
                 flex-direction: column;
                 padding: 2rem;
                 gap: 1rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
             }
 
             nav ul.show {
                 display: flex;
+                animation: slideDown 0.3s ease;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .header-container {
+                padding: 0.8rem 1rem;
+            }
+
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo h2 {
+                font-size: 1rem;
+            }
+
+            /* Page Header */
+            .page-header {
+                height: 40vh;
+                margin-top: 60px;
             }
 
             .page-header h1 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
             }
 
             .page-header p {
+                font-size: 1rem;
+            }
+
+            /* Sections */
+            .company-intro,
+            .company-story,
+            .values-section,
+            .personnel-section,
+            .cta-section {
+                padding: 3rem 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+
+            .section-label {
+                font-size: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            /* Intro Grid */
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .intro-image {
+                height: 300px;
+            }
+
+            .intro-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .intro-text p {
+                font-size: 0.95rem;
+            }
+
+            /* Feature Cards */
+            .feature-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .feature-icon img {
+                width: 100%;
+                height: 200px;
+            }
+
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .feature-card p {
+                font-size: 0.95rem;
+            }
+
+            /* Values Grid */
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .value-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .value-icon img {
+                width: 100%;
+                height: 150px;
+            }
+
+            .value-card h4 {
                 font-size: 1.1rem;
             }
 
-            .intro-text h2,
-            .section-header h2,
+            .value-card p {
+                font-size: 0.9rem;
+            }
+
+            /* MVV Grid */
+            .mvv-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .mvv-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .mvv-card h3 {
+                font-size: 1.5rem;
+            }
+
+            /* Personnel Section */
             .personnel-content h2 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+            }
+
+            .personnel-features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .personnel-feature {
+                padding: 1.5rem 1rem;
+            }
+
+            .personnel-feature-icon img {
+                width: 100%;
+                height: 180px;
+            }
+
+            /* CTA Section */
+            .cta-section {
+                padding: 3rem 1rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-content p {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 0.9rem 2rem;
+            }
+
+            /* Footer */
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-section p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 0.8rem;
+                padding-top: 1.5rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin: 0;
+            }
+
+            .logo-text img {
+                height: 80px;
+                width: auto;
+                max-width: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-image {
+                height: 250px;
+            }
+
+            /* Footer - Extra Small */
+            .footer-section p {
+                font-size: 0.85rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.8rem;
+            }
+
+            .logo-text img {
+                height: 70px;
+                max-width: 160px;
             }
         }
     </style>

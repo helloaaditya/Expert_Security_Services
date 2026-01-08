@@ -956,4 +956,59 @@ footer {
     .logo h2 {
         font-size: 1.2rem;
     }
+
+    /* Footer Responsive */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding-top: 1.5rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .logo-text img {
+        height: 80px;
+        width: auto;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section p {
+        font-size: 0.85rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
+
+    .logo-text img {
+        height: 70px;
+        max-width: 160px;
+    }
 }
