@@ -14,15 +14,74 @@
     <link rel="icon" href="logo_square.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        // Check for success parameter in URL (from FormSubmit redirect)
-        window.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('success') === 'true') {
-                alert('Thank you for your application! We have received your resume and will review it shortly. We will contact you soon if your profile matches our requirements.');
-                // Optional: You can create a success message div instead of using alert
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("IKDrGj1qtCXYVicHZ");
+        })();
+
+        // Notification function
+        function showNotification(message, type) {
+            // Remove existing notification if any
+            const existingNotification = document.querySelector('.email-notification');
+            if (existingNotification) {
+                existingNotification.remove();
             }
-        });
+
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `email-notification email-notification-${type}`;
+            notification.textContent = message;
+            
+            // Add styles
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                color: white;
+                font-weight: 600;
+                z-index: 10000;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                animation: slideInRight 0.3s ease;
+                max-width: 400px;
+            `;
+            
+            if (type === 'success') {
+                notification.style.background = 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)';
+            } else {
+                notification.style.background = 'linear-gradient(135deg, #f5576c 0%, #f093fb 100%)';
+            }
+            
+            // Add animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideInRight {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 5 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideInRight 0.3s ease reverse';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 5000);
+        }
     </script>
     <style>
         .page-header {
@@ -565,18 +624,7 @@
                     Thank you for your interest! We have received your application and will contact you soon.
                 </div>
                 
-                <!-- 
-                    IMPORTANT: Replace 'info@expertsecurity.com' with your actual email address
-                    FormSubmit.co will send emails directly to your inbox - no backend needed!
-                -->
-                <form id="careerForm" action="https://formsubmit.co/aadityakum123@gmail.com" method="POST" enctype="multipart/form-data">
-                    <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_subject" value="New Career Application - Expert Security Services">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="career.html?success=true">
-                    <input type="hidden" name="_autoresponse" value="Thank you for your interest in joining Expert Security Services! We have received your application and will review it shortly. We will contact you soon if your profile matches our requirements.">
-                    <input type="text" name="_honey" style="display:none">
+                <form id="careerForm">
                     <div class="form-group">
                         <label for="fullName">Full Name <span class="required">*</span></label>
                         <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
@@ -711,34 +759,116 @@
     </footer>
 
     <script>
-        // File validation before form submission
-        document.getElementById('careerForm').addEventListener('submit', function(event) {
-            const fileInput = document.getElementById('resume');
-            if (fileInput.files.length > 0) {
-                const file = fileInput.files[0];
-                const maxSize = 5 * 1024 * 1024; // 5MB
-                if (file.size > maxSize) {
-                    event.preventDefault();
-                    alert('File size exceeds 5MB. Please upload a smaller file.');
-                    return false;
-                }
-            }
-            
-            // Show success message after form submission
-            // FormSubmit will handle the actual submission
-            setTimeout(() => {
-                const successMessage = document.getElementById('successMessage');
-                successMessage.classList.add('show');
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 500);
-        });
+        // Career Form with EmailJS
+        // ===================================
+        const careerForm = document.getElementById('careerForm');
 
-        // Check for success parameter in URL (from FormSubmit redirect)
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('success') === 'true') {
-            const successMessage = document.getElementById('successMessage');
-            successMessage.classList.add('show');
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (careerForm) {
+            careerForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Validate file size
+                const fileInput = document.getElementById('resume');
+                if (fileInput.files.length > 0) {
+                    const file = fileInput.files[0];
+                    const maxSize = 5 * 1024 * 1024; // 5MB
+                    if (file.size > maxSize) {
+                        showNotification('File size exceeds 5MB. Please upload a smaller file.', 'error');
+                        return false;
+                    }
+                }
+                
+                // Get form values
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const position = document.getElementById('position').value;
+                const experience = document.getElementById('experience').value;
+                const location = document.getElementById('location').value || 'Not specified';
+                const qualification = document.getElementById('qualification').value || 'Not specified';
+                const psara = document.getElementById('psara').value || 'Not specified';
+                const message = document.getElementById('message').value || 'No additional information provided';
+                
+                // Format message with all details
+                const formattedMessage = `
+Career Application Submission Details:
+
+Full Name: ${fullName}
+Email Address: ${email}
+Phone Number: ${phone}
+Position Applied For: ${position}
+Years of Experience: ${experience}
+Preferred Location: ${location}
+Educational Qualification: ${qualification}
+PSARA License: ${psara}
+
+Cover Letter / Additional Information:
+${message}
+
+Note: Resume file attachment should be sent separately if required.
+---
+This email was sent from the Expert Security Services career application form.
+                `.trim();
+                
+                const formData = {
+                    from_name: fullName,
+                    from_email: email,
+                    phone: phone,
+                    subject: position,
+                    message: formattedMessage,
+                    to_email: 'aadityakum123@gmail.com',
+                    reply_to: email
+                };
+                
+                const submitBtn = careerForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                // Show loading state
+                submitBtn.innerHTML = '⏳ Submitting...';
+                submitBtn.disabled = true;
+                
+                // Send email using EmailJS
+                emailjs.send('service_6wk9oz4', 'template_pg9hym8', formData)
+                    .then(function(response) {
+                        // Success
+                        submitBtn.innerHTML = '✓ Application Submitted!';
+                        submitBtn.style.background = 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)';
+                        
+                        // Show success message
+                        showNotification('Application submitted successfully! We will review it and contact you soon.', 'success');
+                        
+                        // Show success message div
+                        const successMessage = document.getElementById('successMessage');
+                        successMessage.classList.add('show');
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        
+                        // Reset form
+                        careerForm.reset();
+                        
+                        // Reset button after 3 seconds
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.style.background = '';
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    }, function(error) {
+                        // Error
+                        submitBtn.innerHTML = '⚠ Error';
+                        submitBtn.style.background = 'linear-gradient(135deg, #f5576c 0%, #f093fb 100%)';
+                        
+                        // Show error message
+                        showNotification('Failed to submit application. Please try again or contact us directly.', 'error');
+                        
+                        // Reset button after 3 seconds
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.style.background = '';
+                            submitBtn.disabled = false;
+                        }, 3000);
+                        
+                        console.error('EmailJS Error:', error);
+                    });
+            });
         }
     </script>
 </body>
