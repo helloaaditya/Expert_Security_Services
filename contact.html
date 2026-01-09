@@ -8,6 +8,16 @@
     <link rel="icon" href="logo_square.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script>
+        // Check for success parameter in URL (from FormSubmit redirect)
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                alert('Thank you for contacting us! We have received your message and will get back to you soon.');
+                // Optional: You can create a success message div instead of using alert
+            }
+        });
+    </script>
     <style>
         /* Page Header */
         .page-header {
@@ -544,7 +554,13 @@
 
             <div class="contact-form-wrapper fade-in">
                 <h2>Send Us a Message</h2>
-                <form class="contact-form" action="#" method="POST">
+                <!-- 
+                    IMPORTANT: Replace 'info@expertsecurity.com' with your actual email address
+                    FormSubmit.co will send emails directly to your inbox - no backend needed!
+                -->
+                <form class="contact-form" id="contactForm" method="POST">
+                    <!-- Direct email sending - no third-party services -->
+                    
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required placeholder="Enter your full name">

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunities | Expert Security Services - Join Our Team</title>
+    <meta name="description" content="Join Expert Security Services - One of the best security agencies in Bengaluru. Career opportunities for security guards, supervisors, and management positions. Apply now!">
+    <meta name="keywords" content="security jobs, security guard jobs, career opportunities, security agency jobs, Bangalore security jobs, PSARA jobs, security careers">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Expert Security Services">
+    <meta property="og:title" content="Career Opportunities | Expert Security Services">
+    <meta property="og:description" content="Join one of the best security agencies in Bengaluru. Career opportunities for security professionals.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="logo_square.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script>
+        // Check for success parameter in URL (from FormSubmit redirect)
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                alert('Thank you for your application! We have received your resume and will review it shortly. We will contact you soon if your profile matches our requirements.');
+                // Optional: You can create a success message div instead of using alert
+            }
+        });
+    </script>
+    <style>
+        .page-header {
+            height: 50vh;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9), transparent),
+                        url('https://theexpertsecurity.com/wp-content/uploads/2024/07/law-enforcement-security-guard-training-resized.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--white));
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 0 1.5rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .career-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .career-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .career-info {
+            position: sticky;
+            top: 100px;
+        }
+
+        .career-info h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .career-info p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .career-highlights {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .career-highlight {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .career-highlight h4 {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .career-highlight p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .career-form-container {
+            background: var(--light-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .career-form-container h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(13, 27, 42, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .file-upload {
+            position: relative;
+        }
+
+        .file-upload input[type="file"] {
+            padding: 0.9rem;
+            border: 2px dashed #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload input[type="file"]:hover {
+            border-color: var(--primary-blue);
+            background: rgba(13, 27, 42, 0.02);
+        }
+
+        .file-upload-info {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(13, 27, 42, 0.3);
+        }
+
+        .success-message {
+            display: none;
+            background: #2ecc71;
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @media (max-width: 968px) {
+            .career-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .career-info {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+           /* Header & Navigation */
+           .mobile-toggle {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-dark);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            }
+
+            nav ul.show {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .header-container {
+                padding: 0.8rem 1rem;
+            }
+
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo h2 {
+                font-size: 1rem;
+            }
+            /* Page Header */
+            .page-header {
+                height: 40vh;
+                margin-top: 60px;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            /* Career Section */
+            .career-section {
+                padding: 3rem 1rem;
+            }
+
+            .career-container {
+                gap: 2rem;
+            }
+
+            .career-info {
+                position: static;
+            }
+
+            .career-info h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .career-info p {
+                font-size: 1rem;
+            }
+
+            .career-highlights {
+                gap: 1.5rem;
+            }
+
+            .career-highlight {
+                padding: 1.5rem 1rem;
+            }
+
+            .career-highlight h4 {
+                font-size: 1.1rem;
+            }
+
+            .career-highlight p {
+                font-size: 0.9rem;
+            }
+
+            .career-form-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .career-form-container h2 {
+                font-size: 1.6rem;
+            }
+
+            .form-group label {
+                font-size: 0.95rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.9rem;
+                font-size: 0.95rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .submit-btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            /* Footer */
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-section p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 0.8rem;
+                padding-top: 1.5rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin: 0;
+            }
+
+            .logo-text img {
+                height: 80px;
+                width: auto;
+                max-width: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                height: 35vh;
+            }
+
+            .page-header h1 {
+                font-size: 1.4rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .page-header p {
+                font-size: 0.9rem;
+            }
+
+            .career-section {
+                padding: 2.5rem 1rem;
+            }
+
+            .career-info h2 {
+                font-size: 1.5rem;
+            }
+
+            .career-info p {
+                font-size: 0.95rem;
+            }
+
+            .career-form-container {
+                padding: 1.5rem 1rem;
+            }
+
+            .career-form-container h2 {
+                font-size: 1.4rem;
+            }
+
+            .career-highlight {
+                padding: 1.2rem 1rem;
+            }
+
+            .career-highlight h4 {
+                font-size: 1rem;
+            }
+
+            .career-highlight p {
+                font-size: 0.85rem;
+            }
+
+            /* Footer - Extra Small */
+            .footer-section p {
+                font-size: 0.85rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.8rem;
+            }
+
+            .logo-text img {
+                height: 70px;
+                max-width: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo_square.png" alt="Expert Security Services" width="50" height="50">
+                <h2>Expert Security Services</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content fade-in">
+            <h1>Career Opportunities</h1>
+            <p>Join One of the Best Security Agencies in Bengaluru</p>
+        </div>
+    </section>
+
+    <!-- Career Section -->
+    <section class="career-section">
+        <div class="career-container">
+            <div class="career-info fade-in">
+                <h2>Join Our Team</h2>
+                <p>Seek a career with Expert Security Services. One of the best security agencies in Bengaluru. Our employees are our partners and we are deployed in the best Hotels, Tech Parks, Corporates, Industry and Apartments.</p>
+                
+                <div class="career-highlights">
+                    <div class="career-highlight">
+                        <h4>🏢 Premium Locations</h4>
+                        <p>Work at prestigious locations including top Hotels, Tech Parks, Corporate offices, Industrial facilities, and Residential Apartments across Bengaluru.</p>
+                    </div>
+                    <div class="career-highlight">
+                        <h4>🤝 Partnership Approach</h4>
+                        <p>Our employees are our partners. We value your contribution and provide opportunities for growth, training, and career advancement in the security industry.</p>
+                    </div>
+                    <div class="career-highlight">
+                        <h4>🎓 Professional Development</h4>
+                        <p>Continuous training and skill development programs including PSARA certification, specialized security training, and leadership development opportunities.</p>
+                    </div>
+                    <div class="career-highlight">
+                        <h4>💼 Diverse Opportunities</h4>
+                        <p>Various roles available including security guards, supervisors, trainers, and management positions. We offer competitive compensation and benefits packages.</p>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue)); padding: 2rem; border-radius: 15px; color: var(--white);">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700;">Why Choose Us?</h3>
+                    <ul style="line-height: 2; list-style: none; padding: 0;">
+                        <li>✓ PSARA Licensed Organization</li>
+                        <li>✓ ISO 9001:2015 Certified</li>
+                        <li>✓ Competitive Salary Packages</li>
+                        <li>✓ Health Insurance Benefits</li>
+                        <li>✓ Career Growth Opportunities</li>
+                        <li>✓ Professional Training Programs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="career-form-container fade-in">
+                <h2>Apply Now</h2>
+                <div class="success-message" id="successMessage">
+                    Thank you for your interest! We have received your application and will contact you soon.
+                </div>
+                
+                <!-- 
+                    IMPORTANT: Replace 'info@expertsecurity.com' with your actual email address
+                    FormSubmit.co will send emails directly to your inbox - no backend needed!
+                -->
+                <form id="careerForm" method="POST" enctype="multipart/form-data">
+                    <!-- Direct email sending - no third-party services -->
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91 9876543210">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="position">Position Applied For <span class="required">*</span></label>
+                            <select id="position" name="position" required>
+                                <option value="">Select Position</option>
+                                <option value="security-guard">Security Guard</option>
+                                <option value="security-supervisor">Security Supervisor</option>
+                                <option value="security-trainer">Security Trainer</option>
+                                <option value="security-manager">Security Manager</option>
+                                <option value="qrt-member">QRT Member</option>
+                                <option value="vip-protection">VIP Protection Officer</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience <span class="required">*</span></label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Select Experience</option>
+                                <option value="0-1">0-1 Years</option>
+                                <option value="1-3">1-3 Years</option>
+                                <option value="3-5">3-5 Years</option>
+                                <option value="5-10">5-10 Years</option>
+                                <option value="10+">10+ Years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Preferred Location</label>
+                        <select id="location" name="location">
+                            <option value="">Select Location</option>
+                            <option value="bangalore">Bangalore</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="hyderabad">Hyderabad</option>
+                            <option value="chennai">Chennai</option>
+                            <option value="pune">Pune</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qualification">Educational Qualification</label>
+                        <input type="text" id="qualification" name="qualification" placeholder="e.g., 10th, 12th, Graduation, etc.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="psara">PSARA License</label>
+                        <select id="psara" name="psara">
+                            <option value="">Select</option>
+                            <option value="yes">Yes, I have PSARA License</option>
+                            <option value="no">No, but willing to obtain</option>
+                            <option value="na">Not Applicable</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Cover Letter / Additional Information</label>
+                        <textarea id="message" name="message" placeholder="Tell us about yourself, your experience, and why you want to join Expert Security Services..."></textarea>
+                    </div>
+
+                    <div class="form-group file-upload">
+                        <label for="resume">Upload Resume (PDF, DOC, DOCX - Max 5MB) <span class="required">*</span></label>
+                        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                        <div class="file-upload-info">Accepted formats: PDF, DOC, DOCX | Maximum file size: 5MB</div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="logo-text">
+                    <img src="logo.png" alt="Expert Security Services Logo" height="100px" width="200px">
+                </div>
+                <p>India's premier PSARA licensed and ISO certified security services provider with decades of experience in delivering comprehensive protection solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="guarding-security.html">Guarding & Security</a></li>
+                    <li><a href="sensors-cctv.html">Sensors & CCTV</a></li>
+                    <li><a href="crisis-management.html">Crisis Management</a></li>
+                    <li><a href="facility-management.html">Facility Management</a></li>
+                    <li><a href="management-consulting.html">Management Consulting</a></li>
+                    <li><a href="training-services.html">Training Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📍 No 3/3, Outer Ring Road<br>Mahadevapura, Bangalore - 560048<br>(Opposite More Mega Store)</p>
+                <p>📞 +91 9731731488<br>📞 08029918480</p>
+                <p>✉️ info@expertsecurity.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Expert Security Services. All Rights Reserved. | PSARA Licensed | ISO 9001:2015 Certified</p>
+            <p>Designed & Developed by <a href="https://quantum-solutions-indol.vercel.app/" target="_blank">Quantum Solutions ↗️</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // File validation before form submission
+        document.getElementById('careerForm').addEventListener('submit', function(event) {
+            const fileInput = document.getElementById('resume');
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                if (file.size > maxSize) {
+                    event.preventDefault();
+                    alert('File size exceeds 5MB. Please upload a smaller file.');
+                    return false;
+                }
+            }
+            
+            // Show success message after form submission
+            // FormSubmit will handle the actual submission
+            setTimeout(() => {
+                const successMessage = document.getElementById('successMessage');
+                successMessage.classList.add('show');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+        });
+
+        // Check for success parameter in URL (from FormSubmit redirect)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
