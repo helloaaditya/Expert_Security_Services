@@ -1,5 +1,5 @@
 # robots.txt for Expert Security Services
-# https://expertsecurityservices.in/robots.txt
+# https://expert-security-services.pages.dev/robots.txt
 
 User-agent: *
 Allow: /
@@ -8,8 +8,8 @@ Allow: /
 # Disallow: /admin/
 # Disallow: /private/
 
-# Sitemap location
-Sitemap: https://expertsecurityservices.in/sitemap.xml
+Sitemap: https://expert-security-services.pages.dev/sitemap.xml
+
 
 # Crawl-delay (optional - adjust if needed)
 # Crawl-delay: 1
