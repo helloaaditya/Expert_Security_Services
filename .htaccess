@@ -44,8 +44,20 @@
     ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 
+# Set correct MIME types
+<IfModule mod_mime.c>
+    AddType application/xml xml
+    AddType application/rss+xml rss
+    AddType text/xml xml
+</IfModule>
+
 # Security Headers
 <IfModule mod_headers.c>
+    # Set correct content-type for XML files
+    <FilesMatch "\.(xml|sitemap)$">
+        Header set Content-Type "application/xml; charset=utf-8"
+    </FilesMatch>
+    
     # Prevent clickjacking
     Header always set X-Frame-Options "SAMEORIGIN"
     
