@@ -569,8 +569,14 @@
                     IMPORTANT: Replace 'info@expertsecurity.com' with your actual email address
                     FormSubmit.co will send emails directly to your inbox - no backend needed!
                 -->
-                <form id="careerForm" method="POST" enctype="multipart/form-data">
-                    <!-- Direct email sending - no third-party services -->
+                <form id="careerForm" action="https://formsubmit.co/aadityakum123@gmail.com" method="POST" enctype="multipart/form-data">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Career Application - Expert Security Services">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="career.html?success=true">
+                    <input type="hidden" name="_autoresponse" value="Thank you for your interest in joining Expert Security Services! We have received your application and will review it shortly. We will contact you soon if your profile matches our requirements.">
+                    <input type="text" name="_honey" style="display:none">
                     <div class="form-group">
                         <label for="fullName">Full Name <span class="required">*</span></label>
                         <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">

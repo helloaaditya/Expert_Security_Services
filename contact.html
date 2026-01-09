@@ -558,8 +558,14 @@
                     IMPORTANT: Replace 'info@expertsecurity.com' with your actual email address
                     FormSubmit.co will send emails directly to your inbox - no backend needed!
                 -->
-                <form class="contact-form" id="contactForm" method="POST">
-                    <!-- Direct email sending - no third-party services -->
+                <form class="contact-form" action="https://formsubmit.co/aadityakum123@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Expert Security Services">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="contact.html?success=true">
+                    <input type="hidden" name="_autoresponse" value="Thank you for contacting Expert Security Services! We have received your message and will get back to you soon.">
+                    <input type="text" name="_honey" style="display:none">
                     
                     <div class="form-group">
                         <label for="name">Full Name *</label>
