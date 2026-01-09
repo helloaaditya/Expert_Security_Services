@@ -1,0 +1,27 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Expert Security Services -- Website Owner
+    Contact: info@expertsecurity.com
+    Phone: +91 9731731488, 08029918480
+    Location: No 3/3, Outer Ring Road, Mahadevapura, Bangalore - 560048
+
+    Quantum Solutions -- Design & Development
+    Contact: https://quantum-solutions-indol.vercel.app/
+    From: India
+
+# THANKS
+
+    EmailJS -- Email Service Provider
+    FormSubmit.co -- Form Submission Service (for reference)
+
+# TECHNOLOGY COLOPHON
+
+    HTML5
+    CSS3
+    JavaScript (ES6+)
+    EmailJS API
+    Responsive Design
+    Mobile-First Approach
