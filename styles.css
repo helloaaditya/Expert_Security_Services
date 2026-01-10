@@ -5,7 +5,7 @@
 }
 
 :root {
-    --primary-dark: #0d1b2a;
+    --primary-dark: #ffffff;
     --primary-blue: #1b3a5f;
     --accent-gold: #ba1e06;
     --light-bg: #f5f7fa;
@@ -145,7 +145,7 @@ nav a:after {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: var(--accent-gold);
+    /* background: var(--accent-gold); */
     transition: width 0.3s;
 }
 
@@ -188,7 +188,7 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1), transparent 50%);
+    /* background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1), transparent 50%); */
     animation: pulse 4s ease-in-out infinite;
 }
 
@@ -294,12 +294,12 @@ nav a:hover {
 .btn-primary {
     background: var(--accent-gold);
     color: var(--primary-dark);
-    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+    /* box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3); */
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+    /* box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5); */
 }
 
 .btn-secondary {
