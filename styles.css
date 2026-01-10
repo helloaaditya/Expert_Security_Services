@@ -7,11 +7,12 @@
 :root {
     --primary-dark: #0d1b2a;
     --primary-blue: #1b3a5f;
-    --accent-gold: #ba1e06;
+    --accent-gold: #ac1c06;
     --light-bg: #f5f7fa;
     --white: #ffffff;
     --text-dark: #2c3e50;
     --text-light: #6c757d;
+    --btn--light: #f5f7fa;
 }
 
 html {
@@ -293,7 +294,7 @@ nav a:hover {
 
 .btn-primary {
     background: var(--accent-gold);
-    color: var(--primary-dark);
+    color: var(--btn--light);
     /* box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3); */
 }
 
