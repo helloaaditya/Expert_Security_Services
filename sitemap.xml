@@ -68,5 +68,87 @@
   <priority>0.51</priority>
 </url>
 
+<!-- Location-based Security Services -->
+<url>
+  <loc>https://expertsecurityservices.online/security-services-in-mahadevapura.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/security-services-in-indiranagar.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/security-services-in-kalyan-nagar.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Apartment Security Services -->
+<url>
+  <loc>https://expertsecurityservices.online/apartment-security-services-mahadevapura.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/apartment-security-services-indiranagar.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/apartment-security-services-kalyan-nagar.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Corporate Security Services -->
+<url>
+  <loc>https://expertsecurityservices.online/corporate-security-services-mahadevapura.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/corporate-security-services-indiranagar.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Factory & Industrial Security Services -->
+<url>
+  <loc>https://expertsecurityservices.online/factory-security-services-bangalore.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/industrial-security-services-bangalore.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Housekeeping Services -->
+<url>
+  <loc>https://expertsecurityservices.online/housekeeping-services-in-mahadevapura.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/housekeeping-services-in-indiranagar.html</loc>
+  <lastmod>2026-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
 
 </urlset>
