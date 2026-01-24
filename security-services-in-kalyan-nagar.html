@@ -132,11 +132,33 @@
         }
 
         .cta-section {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+            padding: 5rem 2rem;
             text-align: center;
             color: var(--white);
-            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1), transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
         }
 
         .cta-content {
@@ -232,7 +254,7 @@
         <div class="header-container">
             <div class="logo">
                 <img src="logo_square.png" alt="Expert Security Services Logo">
-                <h2>Expert Security</h2>
+                <h2>Expert Security Services</h2>
             </div>
             <nav>
                 <ul>
