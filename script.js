@@ -38,6 +38,38 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Mega menu toggle on mobile and tablet
+    const megaMenuItems = document.querySelectorAll('.mega-menu-item > a');
+    megaMenuItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            if (window.innerWidth <= 968) {
+                e.preventDefault();
+                e.stopPropagation();
+                const megaMenu = this.nextElementSibling;
+                if (megaMenu && megaMenu.classList.contains('mega-menu')) {
+                    const isVisible = megaMenu.style.display === 'block';
+                    // Hide all mega menus first
+                    document.querySelectorAll('.mega-menu').forEach(menu => {
+                        menu.style.display = 'none';
+                    });
+                    // Toggle current mega menu
+                    megaMenu.style.display = isVisible ? 'none' : 'block';
+                }
+            }
+        });
+    });
+
+    // Close mega menu when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 968) {
+            if (!e.target.closest('.mega-menu-item')) {
+                document.querySelectorAll('.mega-menu').forEach(menu => {
+                    menu.style.display = 'none';
+                });
+            }
+        }
+    });
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
