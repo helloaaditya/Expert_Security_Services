@@ -40,32 +40,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Mega menu toggle on mobile and tablet
-    const megaMenuItems = document.querySelectorAll('.mega-menu-item > a');
+    const megaMenuItems = document.querySelectorAll('.mega-menu-item');
     megaMenuItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            if (window.innerWidth <= 968) {
-                e.preventDefault();
-                e.stopPropagation();
-                const megaMenu = this.nextElementSibling;
-                if (megaMenu && megaMenu.classList.contains('mega-menu')) {
-                    const isVisible = megaMenu.style.display === 'block';
-                    // Hide all mega menus first
-                    document.querySelectorAll('.mega-menu').forEach(menu => {
-                        menu.style.display = 'none';
+        const link = item.querySelector('a');
+        if (link) {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const megaMenu = item.querySelector('.mega-menu');
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other mega menus
+                    megaMenuItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            const otherMenu = otherItem.querySelector('.mega-menu');
+                            if (otherMenu) {
+                                otherMenu.classList.remove('show');
+                            }
+                        }
                     });
+                    
                     // Toggle current mega menu
-                    megaMenu.style.display = isVisible ? 'none' : 'block';
+                    if (isActive) {
+                        item.classList.remove('active');
+                        if (megaMenu) megaMenu.classList.remove('show');
+                    } else {
+                        item.classList.add('active');
+                        if (megaMenu) megaMenu.classList.add('show');
+                    }
                 }
-            }
-        });
+            });
+        }
     });
 
     // Close mega menu when clicking outside on mobile
     document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 968) {
-            if (!e.target.closest('.mega-menu-item')) {
-                document.querySelectorAll('.mega-menu').forEach(menu => {
-                    menu.style.display = 'none';
+        if (window.innerWidth <= 768) {
+            if (!e.target.closest('.mega-menu-item') && !e.target.closest('.mobile-toggle')) {
+                megaMenuItems.forEach(item => {
+                    item.classList.remove('active');
+                    const menu = item.querySelector('.mega-menu');
+                    if (menu) menu.classList.remove('show');
                 });
             }
         }
