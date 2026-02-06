@@ -1,0 +1,71 @@
+---
+description: SEO and domain standards for Expert Security Services website
+globs: "**/*.{html,xml}"
+alwaysApply: false
+---
+
+# SEO & Domain Standards
+
+## Domain
+Always use: `https://expertsecurityservices.online/`
+
+```html
+<!-- ❌ WRONG -->
+https://expertsecurityservices.in/
+https://expertsecurityservices.online  (no trailing slash for homepage)
+
+<!-- ✅ CORRECT -->
+https://expertsecurityservices.online/
+https://expertsecurityservices.online/about.html
+```
+
+## URL Format
+All pages use `.html` extension (except homepage):
+
+```html
+<!-- ❌ WRONG -->
+/about
+/services
+
+<!-- ✅ CORRECT -->
+/about.html
+/services.html
+```
+
+## Canonical URLs
+Every HTML page must have a canonical tag matching the sitemap URL:
+
+```html
+<link rel="canonical" href="https://expertsecurityservices.online/page-name.html">
+```
+
+## Sitemap Structure
+- `sitemap.xml` - Index file referencing other sitemaps
+- `sitemap-core.xml` - Homepage + main navigation + service pages
+- `sitemap-locations.xml` - All location-specific pages
+
+## Sitemap Entry Format
+
+```xml
+<!-- ✅ CORRECT - Simple and clean -->
+<url>
+  <loc>https://expertsecurityservices.online/page.html</loc>
+  <lastmod>2026-01-24</lastmod>
+  <priority>0.6</priority>
+</url>
+
+<!-- ❌ WRONG - Mixed formats, changefreq -->
+<url>
+  <loc>https://expertsecurityservices.online/page</loc>
+  <lastmod>2026-01-24T08:36:15+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+```
+
+## Priority Values
+| Page Type | Priority |
+|-----------|----------|
+| Homepage | 1.0 |
+| Main pages | 0.8 |
+| Service pages | 0.7 |
+| Location pages | 0.6 |
