@@ -51,21 +51,18 @@ Every HTML page must have a canonical tag matching the sitemap URL:
 <url>
   <loc>https://expertsecurityservices.online/page.html</loc>
   <lastmod>2026-01-24</lastmod>
-  <priority>0.6</priority>
 </url>
 
-<!-- ❌ WRONG - Mixed formats, changefreq -->
+<!-- ❌ WRONG - priority/changefreq (Google ignores these) -->
 <url>
   <loc>https://expertsecurityservices.online/page</loc>
   <lastmod>2026-01-24T08:36:15+00:00</lastmod>
   <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
 </url>
 ```
 
-## Priority Values
-| Page Type | Priority |
-|-----------|----------|
-| Homepage | 1.0 |
-| Main pages | 0.8 |
-| Service pages | 0.7 |
-| Location pages | 0.6 |
+## Sitemap Best Practices
+- Only use `<loc>` and `<lastmod>` tags
+- Do NOT use `<priority>` or `<changefreq>` (Google ignores them)
+- Use consistent date format: `YYYY-MM-DD`
