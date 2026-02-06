@@ -18,75 +18,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
     animatedElements.forEach(el => observer.observe(el));
 
-    // Mobile menu toggle
+    // Mobile Navigation
     const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('nav ul');
+    const navMenu = document.querySelector('nav > ul');
+    const servicesItem = document.querySelector('.mega-menu-item');
+    const servicesLink = servicesItem ? servicesItem.querySelector('a') : null;
     
+    // Toggle mobile menu
     if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', function() {
+        mobileToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
             navMenu.classList.toggle('show');
-            // Animate hamburger icon
-            const spans = mobileToggle.querySelectorAll('span');
-            if (navMenu.classList.contains('show')) {
-                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
+            mobileToggle.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('show') ? 'hidden' : '';
         });
     }
 
-    // Mega menu toggle on mobile and tablet
-    const megaMenuItems = document.querySelectorAll('.mega-menu-item');
-    megaMenuItems.forEach(item => {
-        const link = item.querySelector('a');
-        if (link) {
-            link.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    const megaMenu = item.querySelector('.mega-menu');
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all other mega menus
-                    megaMenuItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                            const otherMenu = otherItem.querySelector('.mega-menu');
-                            if (otherMenu) {
-                                otherMenu.classList.remove('show');
-                            }
-                        }
-                    });
-                    
-                    // Toggle current mega menu
-                    if (isActive) {
-                        item.classList.remove('active');
-                        if (megaMenu) megaMenu.classList.remove('show');
-                    } else {
-                        item.classList.add('active');
-                        if (megaMenu) megaMenu.classList.add('show');
-                    }
-                }
-            });
-        }
-    });
-
-    // Close mega menu when clicking outside on mobile
-    document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            if (!e.target.closest('.mega-menu-item') && !e.target.closest('.mobile-toggle')) {
-                megaMenuItems.forEach(item => {
-                    item.classList.remove('active');
-                    const menu = item.querySelector('.mega-menu');
-                    if (menu) menu.classList.remove('show');
-                });
+    // Toggle services submenu on mobile
+    if (servicesLink && servicesItem) {
+        servicesLink.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                servicesItem.classList.toggle('active');
             }
-        }
+        });
+    }
+    
+    // Close menu when clicking any link (except Services toggle)
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const isServicesToggle = this.closest('.mega-menu-item') && this === servicesLink;
+            if (!isServicesToggle && window.innerWidth <= 768) {
+                navMenu.classList.remove('show');
+                mobileToggle.classList.remove('active');
+                document.body.style.overflow = '';
+                if (servicesItem) servicesItem.classList.remove('active');
+            }
+        });
     });
     
     // Smooth scrolling for anchor links
@@ -109,10 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Close mobile menu if open
                     if (navMenu && navMenu.classList.contains('show')) {
                         navMenu.classList.remove('show');
-                        const spans = mobileToggle.querySelectorAll('span');
-                        spans[0].style.transform = 'none';
-                        spans[1].style.opacity = '1';
-                        spans[2].style.transform = 'none';
+                        mobileToggle.classList.remove('active');
+                        document.body.style.overflow = '';
                     }
                 }
             }
