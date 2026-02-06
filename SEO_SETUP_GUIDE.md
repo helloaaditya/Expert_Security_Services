@@ -7,7 +7,7 @@ This guide explains the SEO files and configurations for the website.
 ### 1. sitemap.xml
 - Contains all pages of the website
 - Helps search engines discover and index all pages
-- **Action Required**: Update the domain URL from `https://expertsecurityservices.in` to your actual domain
+- **Action Required**: Update the domain URL from `https://expertsecurityservices.online` to your actual domain
 - Submit to Google Search Console and Bing Webmaster Tools
 
 ### 2. robots.txt
@@ -30,7 +30,7 @@ This guide explains the SEO files and configurations for the website.
 ## Setup Instructions
 
 ### Step 1: Update Domain URLs
-1. Replace `https://expertsecurityservices.in` with your actual domain in:
+1. Replace `https://expertsecurityservices.online` with your actual domain in:
    - `sitemap.xml`
    - `robots.txt`
    - All HTML files (canonical URLs and structured data)
