@@ -1,28 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-<!-- Location-based Security Services (Mahadevapura, Indiranagar, Kalyan Nagar) -->
+
 <url>
-  <loc>https://expertsecurityservices.online/security-services-mahadevapura/</loc>
-  <lastmod>2025-02-06</lastmod>
+  <loc>https://expertsecurityservices.online/</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://expertsecurityservices.online/security-services-indiranagar/</loc>
-  <lastmod>2025-02-06</lastmod>
+  <loc>https://expertsecurityservices.online/about</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://expertsecurityservices.online/security-services-kalyan-nagar/</loc>
-  <lastmod>2025-02-06</lastmod>
+  <loc>https://expertsecurityservices.online/services</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/security-services-mahadevapura</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/security-services-indiranagar</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/security-services-kalyan-nagar</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/security-services-bangalore</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/industrial-security-services-bangalore</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/corporate-security-services-bangalore</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/apartment-security-services-bangalore</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/warehouse-security-services-bangalore</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/construction-site-security-services-in-bangalore</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/event-security-services-in-bangalore</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/vip-protection-services-in-bangalore</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/night-patrol-security-services-in-bangalore</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/housekeeping-services-mahadevapura</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/housekeeping-services-indiranagar</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/commercial-cleaning-services-in-bangalore</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/gallery</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/contact</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://expertsecurityservices.online/career</loc>
+  <lastmod>2026-02-18T15:16:24+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
-<!-- Housekeeping Services by Location -->
-<url>
-  <loc>https://expertsecurityservices.online/housekeeping-services-mahadevapura/</loc>
-  <lastmod>2025-02-06</lastmod>
-</url>
-<url>
-  <loc>https://expertsecurityservices.online/housekeeping-services-indiranagar/</loc>
-  <lastmod>2025-02-06</lastmod>
-</url>
 
 </urlset>
