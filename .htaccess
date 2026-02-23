@@ -12,16 +12,12 @@
     # RewriteCond %{HTTP_HOST} !^www\. [NC]
     # RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     
-    # Remove .html extension
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}\.html -f
-    RewriteRule ^(.*)\.html$ /$1 [R=301,L]
-    
-    # Add .html extension internally
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}\.html -f
-    RewriteRule ^(.*)$ $1.html [L]
+    # --- URL extension handling ---
+    # NOTE: We keep real .html URLs visible in the browser.
+    # The previous rules that hid .html and rewrote extensionless URLs
+    # have been disabled to ensure canonical .html URLs show in the address bar.
+    #
+    # (If you ever want to use extensionless URLs again, add new rules here.)
 </IfModule>
 
 # Enable Compression
